@@ -13,11 +13,11 @@
 
 <?php
 
-$sql_host = us-cdbr-iron-east-02.cleardb.net;
-$sql_user = bb5b8b54ae95cf;
-$sql_pass = 2190a897;
-$sql_db = heroku_9eb67c81329411e;
-$sql_table = tree;
+$sql_host = "us-cdbr-iron-east-02.cleardb.net";
+$sql_user = "bb5b8b54ae95cf";
+$sql_pass = "2190a897";
+$sql_db = "heroku_9eb67c81329411e";
+$sql_table = "tree";
 
 $conn = @mysqli_connect($sql_host, $sql_user, $sql_pass, $sql_db);
 
