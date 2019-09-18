@@ -50,14 +50,14 @@ if (!$conn) {
 
 				while ($row = mysqli_fetch_assoc($result)){
 					echo "<tr>";
-					echo "<td>",$row["name"],"</td>";
-					echo "<td>",$row["category"],"</td>";
-					echo "<td>",$row["soil_drain"],"</td>";
-					echo "<td>",$row["sun_requirement"],"</td>";
-					echo "<td>",$row["maintenance"],"</td>";
-					echo "<td>",$row["max_height"],"</td>";
-					echo "<td>",$row["growth_rate"],"</td>";
-					echo "<td>",$row["stock"],"</td>";
+					echo "<td>",$row["NAME"],"</td>";
+					echo "<td>",$row["CATEGORY"],"</td>";
+					echo "<td>",$row["SOIL_DRAIN"],"</td>";
+					echo "<td>",$row["SUN_REQUIREMENT"],"</td>";
+					echo "<td>",$row["MAINTENANCE"],"</td>";
+					echo "<td>",$row["MAX_HEIGHT"],"</td>";
+					echo "<td>",$row["GROWTH_RATE"],"</td>";
+					echo "<td>",$row["STOCK"],"</td>";
 					echo "</tr>";
 				}
 				echo "</table>";
