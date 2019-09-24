@@ -4,6 +4,7 @@
 	$db_handle = new DBController();
 	$search = "Blue Gum";	
 	$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Name LIKE '%search%'");
+	echo $product_array;
 			if (!empty($product_array)) {
 				foreach ($product_array as $key => $value) {
 					?>
