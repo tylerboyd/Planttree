@@ -89,7 +89,7 @@
    <main>
     
     <!--First Slider-->
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 width: 100%">
         <div class="site-slider">
             <div class="slider-one">
             <div>
