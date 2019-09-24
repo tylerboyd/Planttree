@@ -126,30 +126,7 @@ if (!empty($_GET["action"])) {
 			</div>
 		</header>
 		<!--/Header-->
-
-		<h1> Products </h1>
-		<li>
-			<a href="index.html">Home</a>
-		</li>
-		<li>
-			<a href="cart.php">Cart</a>
-		</li>
-		<div id="product-grid">
-			<div class="txt-heading">Products</div>
-			<?php
 			
-			
-			function displaySearch(){
-				$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Name LIKE 'Blue Gum'");
-				
-				if(!empty($product_array)){
-			}
-			
-			
-			
-			
-			
-			function displayAll() {
 			$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
 			if (!empty($product_array)) {
 				foreach ($product_array as $key => $value) {
