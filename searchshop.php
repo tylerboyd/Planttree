@@ -70,7 +70,7 @@
 						<div class="cart form-inline my-2 my-lg-0 text-right p-3">
 							<ul class="navbar-nav mr-auto">
 								<li class="nav-item">
-									<a href="cart.html"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
+									<a href="cart.php"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
 								</li>
 
 							</ul>
@@ -84,14 +84,17 @@
 
 		<h1> Products </h1>
 		<li>
-			<a href="index.html">Home</a>
+			<a href="index.php">Home</a>
 		</li>
 		<li>
 			<a href="cart.php">Cart</a>
 		</li>
 		<div id="product-grid">
 			<div class="txt-heading">Products</div>
-			<?php
+	<?php
+	session_start();
+	require_once("dbcontroller.php");
+	$db_handle = new DBController();
 	$search = "Blue Gum";	
 	$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Name LIKE '%search%'");
 			if (!empty($product_array)) {
