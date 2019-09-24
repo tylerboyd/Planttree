@@ -93,13 +93,13 @@
         <div class="site-slider">
             <div class="slider-one">
             <div>
-            <img src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 1">
+            <img ban1 src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 1">
              </div>
              <div>
-            <img src="Assets/Carousel Images/Banner Sample 2.PNG" class="img-fluid" alt="Banner 2" />
+            <img  ban1 src="Assets/Carousel Images/Banner Sample 2.PNG" class="img-fluid" alt="Banner 2" />
              </div>
              <div>
-            <img src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 3" />
+            <img ban1 src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 3" />
              </div> 
             </div>
             <div class="slider-btn">
