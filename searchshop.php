@@ -2,7 +2,7 @@
 	session_start();
 	require_once("dbcontroller.php");
 	$db_handle = new DBController();
-	$search = 'Blue Gum'
+	$search = 'Blue Gum';
 	$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Name LIKE '%search%'");
 			if (!empty($product_array)) {
 				foreach ($product_array as $key => $value) {
