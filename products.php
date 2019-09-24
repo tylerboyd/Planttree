@@ -150,7 +150,6 @@ if (!empty($_GET["action"])) {
 				}
 			}
 			?>
-			}
 			
 		</div>
 	</Body>
