@@ -135,9 +135,14 @@
     max-height: 250px;
 }
 
-card.content{
+.card.content{
     border: none;
     
+}
+
+.img.ban1 {
+  width: 100%;
+  height: auto;
 }
 
 .card.product {
