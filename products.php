@@ -154,7 +154,7 @@ if (!empty($_GET["action"])) {
 			<?php
 				}
 			}
-			?
+			?>
 			
 		</div>
 	</Body>
