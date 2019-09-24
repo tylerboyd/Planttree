@@ -147,7 +147,7 @@
  
    
    <footer>
-        <div class="row mt-5 footer-cell bg-light">
+        <div class="row mt-5 footer-cell bg-light padding-left: 10px">
     <div class="col-sm footer-cell">
         <br>
         <h5>Services</h5>
