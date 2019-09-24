@@ -1,74 +1,163 @@
-<HTML>
-<Head>
-	<title>Plant a Tree </title>
-</Head>
-<Body>
-	<h1> Products </h1>
-	<li>
-		<a href="index.html">Home</a>
-	</li>
-	<li>
-		<a href="cart.html">Cart</a>
-	</li>
-
 <?php
+session_start();
+require_once("dbcontroller.php");
+$db_handle = new DBController();
+if (!empty($_GET["action"])) {
+	switch ($_GET["action"]) {
+		case "add":
+			if (!empty($_POST["quantity"])) {
+				$productByCode = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["Code"] . "'");
+				$itemArray = array($productByCode[0]["Code"] => array('Name' => $productByCode[0]["Name"], 'Code' => $productByCode[0]["Code"], 'quantity' => $_POST["quantity"], 'Price' => $productByCode[0]["Price"], 'Image' => $productByCode[0]["Image"]));
 
-$sql_host = "us-cdbr-iron-east-02.cleardb.net";
-$sql_user = "bb5b8b54ae95cf";
-$sql_pass = "2190a897";
-$sql_db = "heroku_9eb67c81329411e";
-$sql_table = "tree";
-
-$conn = @mysqli_connect($sql_host, $sql_user, $sql_pass, $sql_db);
-
-if (!$conn) {
-		echo "<p>Database connection failure</p>";
-	} else {
-
-		$exists = mysqli_query($conn, "SELECT 1 FROM $sql_table LIMIT 1");
-
-		if($exists !== FALSE){
-
-				$query = "SELECT * FROM $sql_table";
-
-				$result = mysqli_query($conn, $query);
-
-				if(!$result) {
-				echo "<p>Something is wrong with ",	$query, "</p>";
-			}  else {
-				echo "<table border=\"1\">";
-				echo "<tr>\n"
-				."<th scope=\"col\">Tree Name</th>\n"
-				."<th scope=\"col\">Tree Type</th>\n"
-				."<th scope=\"col\">Soil Drainage</th>\n"
-				."<th scope=\"col\">Sun Requirement</th>\n"
-				."<th scope=\"col\">Maintenance</th>\n"
-				."<th scope=\"col\">Max Height</th>\n"
-				."<th scope=\"col\">Growth Rate</th>\n"
-				."<th scope=\"col\">Stock</th>\n"
-				."</tr>\n";
-
-				while ($row = mysqli_fetch_assoc($result)){
-					echo "<tr>";
-					echo "<td>",$row["NAME"],"</td>";
-					echo "<td>",$row["CATEGORY"],"</td>";
-					echo "<td>",$row["SOIL_DRAIN"],"</td>";
-					echo "<td>",$row["SUN_REQUIREMENT"],"</td>";
-					echo "<td>",$row["MAINTENANCE"],"</td>";
-					echo "<td>",$row["MAX_HEIGHT"],"</td>";
-					echo "<td>",$row["GROWTH_RATE"],"</td>";
-					echo "<td>",$row["STOCK"],"</td>";
-					echo "</tr>";
+				if (!empty($_SESSION["cart_item"])) {
+					if (in_array($productByCode[0]["Code"], array_keys($_SESSION["cart_item"]))) {
+						foreach ($_SESSION["cart_item"] as $k => $v) {
+							if ($productByCode[0]["Code"] == $k) {
+								if (empty($_SESSION["cart_item"][$k]["quantity"])) {
+									$_SESSION["cart_item"][$k]["quantity"] = 0;
+								}
+								$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+							}
+						}
+					} else {
+						$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"], $itemArray);
+					}
+				} else {
+					$_SESSION["cart_item"] = $itemArray;
 				}
-				echo "</table>";
-				mysqli_free_result($result);
 			}
-			mysqli_close($conn);
-		}
-		else{
-			echo "<p>No trees exist in the table!</p>";
-		}
+			break;
+		case "remove":
+			if (!empty($_SESSION["cart_item"])) {
+				foreach ($_SESSION["cart_item"] as $k => $v) {
+					if ($_GET["Code"] == $k)
+						unset($_SESSION["cart_item"][$k]);
+					if (empty($_SESSION["cart_item"]))
+						unset($_SESSION["cart_item"]);
+				}
+			}
+			break;
+		case "empty":
+			unset($_SESSION["cart_item"]);
+			break;
 	}
+}
 ?>
-</Body>
-</HTML>
+	<HTML>
+
+	<Head>
+		<title>Plant a Tree </title>
+
+		<!--Bootstrap CDN-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+		<!--font awesome cdn-->
+		<script src="https://kit.fontawesome.com/a7d4a476f6.js" crossorigin="anonymous"></script>
+
+		<!--Slick Slider-->
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+		<!-- Custom Stylesheet-->
+		<link rel="stylesheet" href="custom-styles.css">
+
+	</Head>
+
+	<Body>
+		<!--Header-->
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-12 col-12"></div>
+					<div class="col-md-4 col-sm-12 col-12 text-center">
+						<img src="Assets/Logos/PlantATree.png" alt="Plant a Tree" style="width:100px;height:100px">
+					</div>
+				</div>
+			</div>
+
+			<!--Nav Bar (Apply to other pages-->
+			<div class="container-fluid p-0">
+
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active">
+								<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="products.php">Trees</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="products.php">Related Products</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="products.php">Contact Us</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="products.php">Locations</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="products.php">Help</a>
+							</li>
+						</ul>
+						<form action="searchshop.php" method="GET" class="form-inline my-2 my-lg-0">
+							<input class="form-control mr-sm-2" type="search" placeholder="Search for a product" aria-label="Search for a product" name="search">
+							<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+						</form>
+						<div class="cart form-inline my-2 my-lg-0 text-right p-3">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item">
+									<a href="cart.php"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+
+				</nav>
+			</div>
+		</header>
+		<!--/Header-->
+
+		<div id="product-grid">
+			<div class="txt-heading">Products</div>
+			<?php
+
+			function displayAll() {
+			$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
+			if (!empty($product_array)) {
+				foreach ($product_array as $key => $value) {
+					?>
+					<div class="product-item">
+						<form method="post" action="products.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
+							<div class="product-Image">
+								<img src="images/<?php echo $product_array[$key]["Image"]; ?> " />
+							</div>
+							<div class="product-tile-footer">
+								<form action="products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>">
+									<input type="hidden" name="hidden_code" value=<?php echo $product_array[$key]["Code"]; ?> />
+									<a class="product-title" href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $product_array[$key]["Name"]; ?></a>
+								</form>
+								<div class="product-Price"><?php echo "$" . $product_array[$key]["Price"]; ?></div>
+								<div class="cart-action"><input type="text" class="product-quantity" Name="quantity" value="1" pattern="[0-99]" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+							</div>
+						</form>
+					</div>
+			<?php
+				}
+			}
+			?>
+			}
+			
+		</div>
+	</Body>
+
+	</HTML>
