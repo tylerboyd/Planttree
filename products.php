@@ -90,22 +90,22 @@ if (!empty($_GET["action"])) {
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item active">
-								<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="products.html">Trees</a>
+								<a class="nav-link" href="products.php">Trees</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="products.html">Related Products</a>
+								<a class="nav-link" href="products.php">Related Products</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="products.html">Contact Us</a>
+								<a class="nav-link" href="products.php">Contact Us</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="products.html">Locations</a>
+								<a class="nav-link" href="products.php">Locations</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="products.html">Help</a>
+								<a class="nav-link" href="products.php">Help</a>
 							</li>
 						</ul>
 						<form class="form-inline my-2 my-lg-0">
@@ -129,7 +129,7 @@ if (!empty($_GET["action"])) {
 
 		<h1> Products </h1>
 		<li>
-			<a href="index.html">Home</a>
+			<a href="index.php">Home</a>
 		</li>
 		<li>
 			<a href="cart.php">Cart</a>
