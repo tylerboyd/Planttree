@@ -135,6 +135,41 @@
     max-height: 250px;
 }
 
+card.content{
+    border: none;
+    
+}
+
+.card.product {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 60%;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+  float: right;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card.product button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card.product button:hover {
+  opacity: 0.7;
+}
 /* Border for footer WIP */
 /* .footer-cell {
     border: solid #adadad 1px;
