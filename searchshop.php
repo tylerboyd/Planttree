@@ -116,7 +116,7 @@ if (!empty($_GET["action"])) {
 						<div class="cart form-inline my-2 my-lg-0 text-right p-3">
 							<ul class="navbar-nav mr-auto">
 								<li class="nav-item">
-									<a href="cart.html"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
+									<a href="cart.php"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
 								</li>
 
 							</ul>
