@@ -90,32 +90,32 @@ if (!empty($_GET["action"])) {
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item active">
-								<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="products.php">Trees</a>
+								<a class="nav-link" href="products.html">Trees</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="products.php">Related Products</a>
+								<a class="nav-link" href="products.html">Related Products</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="products.php">Contact Us</a>
+								<a class="nav-link" href="products.html">Contact Us</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="products.php">Locations</a>
+								<a class="nav-link" href="products.html">Locations</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="products.php">Help</a>
+								<a class="nav-link" href="products.html">Help</a>
 							</li>
 						</ul>
-						<form class="form-inline my-2 my-lg-0">
-							<input class="form-control mr-sm-2" type="search" placeholder="Dwarf Apple etc..." aria-label="Dwarf Apple etc...">
+						<form action="searchshop.php" method="GET" class="form-inline my-2 my-lg-0">
+							<input class="form-control mr-sm-2" type="search" placeholder="Search for a product" aria-label="Search for a product" name="search">
 							<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 						</form>
 						<div class="cart form-inline my-2 my-lg-0 text-right p-3">
 							<ul class="navbar-nav mr-auto">
 								<li class="nav-item">
-									<a href="cart.php"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
+									<a href="cart.html"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
 								</li>
 
 							</ul>
@@ -129,7 +129,7 @@ if (!empty($_GET["action"])) {
 
 		<h1> Products </h1>
 		<li>
-			<a href="index.php">Home</a>
+			<a href="index.html">Home</a>
 		</li>
 		<li>
 			<a href="cart.php">Cart</a>
@@ -137,6 +137,19 @@ if (!empty($_GET["action"])) {
 		<div id="product-grid">
 			<div class="txt-heading">Products</div>
 			<?php
+			
+			
+			function displaySearch(){
+				$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Name LIKE 'Blue Gum'");
+				
+				if(!empty($product_array)){
+			}
+			
+			
+			
+			
+			
+			function displayAll() {
 			$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
 			if (!empty($product_array)) {
 				foreach ($product_array as $key => $value) {
@@ -160,6 +173,8 @@ if (!empty($_GET["action"])) {
 				}
 			}
 			?>
+			}
+			
 		</div>
 	</Body>
 

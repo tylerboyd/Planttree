@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +22,15 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     
     
+
     
     
     <!-- Custom Stylesheet-->
-    <link rel="stylesheet" href="styles/custom-styles.css">
+    <link rel="stylesheet" href="custom-styles.css">
     
 </head>
 <body>
+
   <!--Header-->
    <header>
     <div class="container fluid">
@@ -45,35 +49,36 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="products.php">Trees</a>
+        <a class="nav-link" href="products.html">Trees</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="products.php">Related Products</a>
+        <a class="nav-link" href="products.html">Related Products</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="products.php">Contact Us</a>
+        <a class="nav-link" href="products.html">Contact Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="products.php">Locations</a>
+        <a class="nav-link" href="products.html">Locations</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="products.php">Help</a>
+        <a class="nav-link" href="products.html">Help</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Dwarf Apple etc..." aria-label="Dwarf Apple etc...">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <form action="searchshop.php" method="GET" class="form-inline my-2 my-lg-0">
+		<input class="form-control mr-sm-2" type="search" placeholder="Search for a product" aria-label="Search for a product" name="search">
+		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	</form>
     <div class="cart form-inline my-2 my-lg-0 text-right p-3">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a href="cart.php"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
+        <a href="cart.html"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
       </li>
         
       </ul>
@@ -89,17 +94,17 @@
    <main>
     
     <!--First Slider-->
-    <div class="container-fluid p-0 width: 100%">
+    <div class="container-fluid p-0">
         <div class="site-slider">
             <div class="slider-one">
             <div>
-            <img ban1 src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 1">
+            <img src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 1">
              </div>
              <div>
-            <img  ban1 src="Assets/Carousel Images/Banner Sample 2.PNG" class="img-fluid" alt="Banner 2" />
+            <img src="Assets/Carousel Images/Banner Sample 2.PNG" class="img-fluid" alt="Banner 2" />
              </div>
              <div>
-            <img ban1 src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 3" />
+            <img src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 3" />
              </div> 
             </div>
             <div class="slider-btn">
@@ -115,7 +120,7 @@
    </main>
    <!--/Main Section-->
    <div>
-   <div class="card content" style="width: 65%; float: left">
+   <div class="card" style="width: 65%; float: left">
   <div class="card-body">
     <h5 class="card-title">About Us</h5>
     <h6 class="card-subtitle mb-2 text-muted">Who We Are</h6>
@@ -125,7 +130,7 @@
   </div>
 </div>
  
- <div class="card content" style="width: 35%; float left">
+ <div class="card" style="width: 35%; float left">
   <div class="card-body">
     <h5 class="card-title">Our Services</h5>
     <h6 class="card-subtitle mb-2 text-muted">What We Do</h6>
