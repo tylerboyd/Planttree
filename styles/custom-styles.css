@@ -135,6 +135,11 @@
     max-height: 250px;
 }
 
+img.ban1 {
+  width: 100%;
+  height: auto;
+}
+
 /* Import fonts from google fonts*/
 
 @import url('https://fonts.googleapis.com/css?family=Anton|Gugi|Lato|Roboto|Sofia&display=swap');
