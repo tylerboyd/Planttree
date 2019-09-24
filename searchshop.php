@@ -81,18 +81,6 @@
 			</div>
 		</header>
 		<!--/Header-->
-
-		<h1> Products </h1>
-		<li>
-			<a href="index.php">Home</a>
-		</li>
-		<li>
-			<a href="cart.php">Cart</a>
-		</li>
-		<div id="product-grid">
-			<div class="txt-heading">Products</div>
-		</div>
-		
 		<?php
 	session_start();
 	require_once("dbcontroller.php");
