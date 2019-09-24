@@ -7,7 +7,7 @@
 <Body>
 	<h1> Shopping Cart </h1>
 	<li>
-		<a href="index.html">Home</a>
+		<a href="index.php">Home</a>
 	</li>
 	<li>
 		<a href="products.php">Products</a>
