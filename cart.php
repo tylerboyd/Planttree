@@ -38,7 +38,7 @@
 							$item_Price = $item["quantity"] * $item["Price"];
 							?>
 						<tr>
-							<td><img src="<?php echo $item["Image"]; ?>" class="cart-item-Image" /><?php echo $item["Name"]; ?></td>
+							<td><img src="images/<?php echo $item["Image"]; ?>" class="cart-item-Image" /><?php echo $item["Name"]; ?></td>
 							<td><?php echo $item["Code"]; ?></td>
 							<td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
 							<td style="text-align:right;"><?php echo "$ " . $item["Price"]; ?></td>
