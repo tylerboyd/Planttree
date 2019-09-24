@@ -92,7 +92,7 @@
 		<div id="product-grid">
 			<div class="txt-heading">Products</div>
 			<?php
-	$search = $_GET["search"];	
+	$search = "Blue Gum";	
 	$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Name LIKE '%search%'");
 			if (!empty($product_array)) {
 				foreach ($product_array as $key => $value) {
