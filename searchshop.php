@@ -1,3 +1,31 @@
+	<?php
+	session_start();
+	require_once("dbcontroller.php");
+	$db_handle = new DBController();
+	$search = "Blue Gum";	
+	$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Name LIKE '%search%'");
+			if (!empty($product_array)) {
+				foreach ($product_array as $key => $value) {
+					?>
+					<div class="product-item">
+						<form method="post" action="products.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
+							<div class="product-Image">
+								<img src="images/<?php echo $product_array[$key]["Image"]; ?> " />
+							</div>
+							<div class="product-tile-footer">
+								<form action="products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>">
+									<input type="hidden" name="hidden_code" value=<?php echo $product_array[$key]["Code"]; ?> />
+									<a class="product-title" href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $product_array[$key]["Name"]; ?></a>
+								</form>
+								<div class="product-Price"><?php echo "$" . $product_array[$key]["Price"]; ?></div>
+								<div class="cart-action"><input type="text" class="product-quantity" Name="quantity" value="1" pattern="[0-99]" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+							</div>
+						</form>
+					</div>
+			<?php
+				}
+			}
+	?>
 	<HTML>
 
 	<Head>
@@ -91,34 +119,6 @@
 		</li>
 		<div id="product-grid">
 			<div class="txt-heading">Products</div>
-	<?php
-	session_start();
-	require_once("dbcontroller.php");
-	$db_handle = new DBController();
-	$search = "Blue Gum";	
-	$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Name LIKE '%search%'");
-			if (!empty($product_array)) {
-				foreach ($product_array as $key => $value) {
-					?>
-					<div class="product-item">
-						<form method="post" action="products.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
-							<div class="product-Image">
-								<img src="images/<?php echo $product_array[$key]["Image"]; ?> " />
-							</div>
-							<div class="product-tile-footer">
-								<form action="products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>">
-									<input type="hidden" name="hidden_code" value=<?php echo $product_array[$key]["Code"]; ?> />
-									<a class="product-title" href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $product_array[$key]["Name"]; ?></a>
-								</form>
-								<div class="product-Price"><?php echo "$" . $product_array[$key]["Price"]; ?></div>
-								<div class="cart-action"><input type="text" class="product-quantity" Name="quantity" value="1" pattern="[0-99]" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
-							</div>
-						</form>
-					</div>
-			<?php
-				}
-			}
-	?>
 		</div>
 	</Body>
 
