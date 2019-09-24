@@ -1,49 +1,3 @@
-<?php
-session_start();
-$search = $_GET["search"];
-require_once("dbcontroller.php");
-$db_handle = new DBController();
-if (!empty($_GET["action"])) {
-	switch ($_GET["action"]) {
-		case "add":
-			if (!empty($_POST["quantity"])) {
-				$productByCode = $db_handle->runQuery("SELECT * FROM tree WHERE Name LIKE '%search%'");
-				$itemArray = array($productByCode[0]["Code"] => array('Name' => $productByCode[0]["Name"], 'Code' => $productByCode[0]["Code"], 'quantity' => $_POST["quantity"], 'Price' => $productByCode[0]["Price"], 'Image' => $productByCode[0]["Image"]));
-
-				if (!empty($_SESSION["cart_item"])) {
-					if (in_array($productByCode[0]["Code"], array_keys($_SESSION["cart_item"]))) {
-						foreach ($_SESSION["cart_item"] as $k => $v) {
-							if ($productByCode[0]["Code"] == $k) {
-								if (empty($_SESSION["cart_item"][$k]["quantity"])) {
-									$_SESSION["cart_item"][$k]["quantity"] = 0;
-								}
-								$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
-							}
-						}
-					} else {
-						$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"], $itemArray);
-					}
-				} else {
-					$_SESSION["cart_item"] = $itemArray;
-				}
-			}
-			break;
-		case "remove":
-			if (!empty($_SESSION["cart_item"])) {
-				foreach ($_SESSION["cart_item"] as $k => $v) {
-					if ($_GET["Code"] == $k)
-						unset($_SESSION["cart_item"][$k]);
-					if (empty($_SESSION["cart_item"]))
-						unset($_SESSION["cart_item"]);
-				}
-			}
-			break;
-		case "empty":
-			unset($_SESSION["cart_item"]);
-			break;
-	}
-}
-?>
 	<HTML>
 
 	<Head>
@@ -116,7 +70,7 @@ if (!empty($_GET["action"])) {
 						<div class="cart form-inline my-2 my-lg-0 text-right p-3">
 							<ul class="navbar-nav mr-auto">
 								<li class="nav-item">
-									<a href="cart.php"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
+									<a href="cart.html"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
 								</li>
 
 							</ul>
@@ -138,7 +92,8 @@ if (!empty($_GET["action"])) {
 		<div id="product-grid">
 			<div class="txt-heading">Products</div>
 			<?php
-			$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
+	$search = $_GET["search"];	
+	$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Name LIKE '%search%'");
 			if (!empty($product_array)) {
 				foreach ($product_array as $key => $value) {
 					?>
@@ -160,7 +115,7 @@ if (!empty($_GET["action"])) {
 			<?php
 				}
 			}
-			?>
+	?>
 		</div>
 	</Body>
 
