@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +20,6 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     
     
-
     
     
     <!-- Custom Stylesheet-->
@@ -30,7 +27,6 @@
     
 </head>
 <body>
-
   <!--Header-->
    <header>
     <div class="container fluid">
@@ -49,26 +45,25 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="products.php">Trees</a>
+        <a class="nav-link" href="products.html">Trees</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="products.php">Related Products</a>
+        <a class="nav-link" href="products.html">Related Products</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="products.php">Contact Us</a>
+        <a class="nav-link" href="products.html">Contact Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="products.php">Locations</a>
+        <a class="nav-link" href="products.html">Locations</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="products.php">Help</a>
+        <a class="nav-link" href="products.html">Help</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -78,7 +73,7 @@
     <div class="cart form-inline my-2 my-lg-0 text-right p-3">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a href="cart.php"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
+        <a href="cart.html"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
       </li>
         
       </ul>
@@ -120,7 +115,7 @@
    </main>
    <!--/Main Section-->
    <div>
-   <div class="card" style="width: 65%; float: left">
+   <div class="card content" style="width: 65%; float: left">
   <div class="card-body">
     <h5 class="card-title">About Us</h5>
     <h6 class="card-subtitle mb-2 text-muted">Who We Are</h6>
@@ -130,7 +125,7 @@
   </div>
 </div>
  
- <div class="card" style="width: 35%; float left">
+ <div class="card content" style="width: 35%; float left">
   <div class="card-body">
     <h5 class="card-title">Our Services</h5>
     <h6 class="card-subtitle mb-2 text-muted">What We Do</h6>
