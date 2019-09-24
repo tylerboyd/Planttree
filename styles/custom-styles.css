@@ -135,12 +135,12 @@
     max-height: 250px;
 }
 
-.card.content{
-    border: none;
+.card{
+    border: 0px; 
     
 }
 
-.img.ban1 {
+.img-fluid {
   width: 100%;
   height: auto;
 }
