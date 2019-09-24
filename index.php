@@ -120,7 +120,7 @@
    </main>
    <!--/Main Section-->
    <div>
-   <div class="card" style="width: 65%; float: left">
+   <div class="card content" style="width: 65%; float: left">
   <div class="card-body">
     <h5 class="card-title">About Us</h5>
     <h6 class="card-subtitle mb-2 text-muted">Who We Are</h6>
@@ -130,7 +130,7 @@
   </div>
 </div>
  
- <div class="card" style="width: 35%; float left">
+ <div class="card content" style="width: 35%; float left">
   <div class="card-body">
     <h5 class="card-title">Our Services</h5>
     <h6 class="card-subtitle mb-2 text-muted">What We Do</h6>
