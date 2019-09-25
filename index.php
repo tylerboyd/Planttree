@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
     <title>Index</title>
     <!--Bootstrap CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,17 +22,17 @@
     
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     
-    
-
-    
-    
     <!-- Custom Stylesheet-->
     <link rel="stylesheet" href="styles/custom-styles.css">
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     
 </head>
 <body>
 
-  <!--Header-->
+  <!--Header-
    <header>
     <div class="container fluid">
         <div class="row">
@@ -43,6 +44,9 @@
     </div>
     
     <!--Nav Bar (Apply to other pages-->
+    
+    <?php include("banner.php"); ?>
+    
     <div class="container-fluid p-0">
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -98,13 +102,13 @@
         <div class="site-slider">
             <div class="slider-one">
             <div>
-            <img src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 1">
+            <img ban1 src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 1">
              </div>
              <div>
-            <img src="Assets/Carousel Images/Banner Sample 2.PNG" class="img-fluid" alt="Banner 2" />
+            <img ban1 src="Assets/Carousel Images/Banner Sample 2.PNG" class="img-fluid" alt="Banner 2" />
              </div>
              <div>
-            <img src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 3" />
+            <img ban1 src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 3" />
              </div> 
             </div>
             <div class="slider-btn">
@@ -120,7 +124,7 @@
    </main>
    <!--/Main Section-->
    <div>
-   <div class="card content" style="width: 65%; float: left">
+   <div class="card" style="width: 65%; float: left">
   <div class="card-body">
     <h5 class="card-title">About Us</h5>
     <h6 class="card-subtitle mb-2 text-muted">Who We Are</h6>
@@ -130,7 +134,7 @@
   </div>
 </div>
  
- <div class="card content" style="width: 35%; float left">
+ <div class="card" style="width: 35%; float left">
   <div class="card-body">
     <h5 class="card-title">Our Services</h5>
     <h6 class="card-subtitle mb-2 text-muted">What We Do</h6>
@@ -147,50 +151,7 @@
  
    
    <footer>
-        <div class="row mt-5 footer-cell bg-light padding-left: 10px">
-    <div class="col-sm footer-cell">
-        <br>
-        <h5>Services</h5>
-        <nav class="nav flex-column">
-            <a class="nav-link" href="#">Gardening</a>
-            <a class="nav-link" href="#">E-mail reminders</a>
-            <a class="nav-link" href="#">AR Trees</a>
-        </nav>
-    </div>
-    <div class="col-sm footer-cell">
-        <br>
-        <h5>Payment Methods</h5>
-        <nav class="nav flex-column">
-            <a class="nav-link" href="#">Active</a>
-            <a class="nav-link" href="#">Link</a>
-            <a class="nav-link" href="#">Link</a>
-        </nav>
-    </div>
-    <div class="col-sm">
-        <br>
-        <h5>Quicklinks</h5>
-        <nav class="nav flex-column">
-            <a class="nav-link" href="#">Home</a>
-            <a class="nav-link" href="#">Trees</a>
-            <a class="nav-link" href="#">Related products</a>
-            <a class="nav-link" href="#">Contact us</a>
-            <a class="nav-link" href="#">Locations</a>
-            <a class="nav-link" href="#">Help</a>
-        </nav>
-    </div>
-    <div class="col-sm">
-        <br>
-        <h5>Help</h5>
-        <nav class="nav flex-column">
-            <a class="nav-link" href="#">Basics of tree care</a>
-            <a class="nav-link" href="#">Recommended products</a>
-            <a class="nav-link" href="#">Beginners guide</a>
-            <a class="nav-link " href="#">Book a gardener</a>
-            <a class="nav-link " href="#">Newsletter</a>
-            <a class="nav-link " href="#">Become a VIP customer</a>
-        </nav>
-    </div>
-</div>
+    <?php include("footer.php"); ?>
    </footer>
    
     

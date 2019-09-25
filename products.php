@@ -126,12 +126,7 @@ if (!empty($_GET["action"])) {
 			</div>
 		</header>
 		<!--/Header-->
-
-		<div id="product-grid">
-			<div class="txt-heading">Products</div>
 			<?php
-
-			function displayAll() {
 			$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
 			if (!empty($product_array)) {
 				foreach ($product_array as $key => $value) {
