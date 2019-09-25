@@ -72,9 +72,8 @@ if (!empty($_GET["action"])) {
 		<header>
 			<div class="container">
 				<div class="row">
-					<!-- <div class="col-md-4 col-sm-12 col-12"></div> -->
-					<!-- <div class="col-md-4 col-sm-12 col-12 text-center"> -->
-					<div class="text-center">
+					<div class="col-md-4 col-sm-12 col-12"></div>
+					<div class="col-md-4 col-sm-12 col-12 text-center">
 						<img src="Assets/Logos/PlantATree.png" alt="Plant a Tree" style="width:100px;height:100px">
 					</div>
 				</div>
@@ -128,39 +127,51 @@ if (!empty($_GET["action"])) {
 		</header>
 		<!--/Header-->
 
-		<div class="row justify-content-md-center">
-			<div class="col col-md bg-dark">
-				1 of 3
+		<div class="row justify-content-md-center mt-3 ml-3 mr-3">
+			<div class="col-lg-3 border">
+				<h3 class="mt-2">Filters</h3>
 			</div>
-			<div class="col col-md-9  bg-danger ">
-				Variable width content
-				<div class="row justify-content-md-center">
+			<div class="col-lg ">
+
 				<?php
-
-
 				$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
 				if (!empty($product_array)) {
 					foreach ($product_array as $key => $value) {
 						?>
 
-
-
-
-						<div class="product-item">
+						<div class="row-4 mt-3 border bg-light text-center">
 
 							<form method="post" action="products.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
-								<div class="product-Image">
-									<img class="img-thumbnail products-thumb" src="images/<?php echo $product_array[$key]["Image"]; ?> " />
+
+								<div class="row">
+
+									<div class="col-md-3 mt-1 ml-1 mr-1 mb-1">
+										<img class="img-thumbnail products-thumb" src="images/<?php echo $product_array[$key]["Image"]; ?> " />
+									</div>
+
+									<div class="col mt-2 text-left">
+										<h3>
+											<form action="products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>">
+												<input type="hidden" name="hidden_code" value=<?php echo $product_array[$key]["Code"]; ?> />
+												<a class="product-title" href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $product_array[$key]["Name"]; ?></a>
+											</form>
+										</h3>
+									</div>
+
+									<div class="col text-right mr-3">
+										<h3>
+											<div class="product-Price"><?php echo "$" . $product_array[$key]["Price"]; ?></div>
+										</h3>
+										<div class="cart-action float-right">
+											<input type="text" class="product-quantity  form-control mb-2" Name="quantity" maxlength="2" size="2" value="1" pattern="[0-99]" />
+											<input type="submit" value="Add to Cart" class="btnAddAction btn btn-lg btn-primary" />
+										</div>
+									</div>
+
 								</div>
-								<div class="product-tile-footer">
-									<form action="products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>">
-										<input type="hidden" name="hidden_code" value=<?php echo $product_array[$key]["Code"]; ?> />
-										<a class="product-title" href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $product_array[$key]["Name"]; ?></a>
-									</form>
-									<div class="product-Price"><?php echo "$" . $product_array[$key]["Price"]; ?></div>
-									<div class="cart-action"><input type="text" class="product-quantity" Name="quantity" value="1" pattern="[0-99]" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
-								</div>
+
 							</form>
+
 						</div>
 
 				<?php
@@ -168,11 +179,12 @@ if (!empty($_GET["action"])) {
 					}
 				}
 				?>
-				</div>
+
+
 			</div>
 		</div>
 
-		</div>
+
 	</Body>
 
 	</HTML>

@@ -138,6 +138,12 @@
     max-height: 250px
 }
 
+/* Customs for priduct.php */
+.qty-products-form {
+    max-width: 50px;
+    text-align: center;
+}
+
 .card{
     border: 0px; 
     
