@@ -132,7 +132,7 @@
 }  */
 
 .banner-image {
-    max-height: 250px;
+    max-height: 200px;
 }
 .products-thumb {
     max-height: 250px
@@ -144,7 +144,6 @@
 }
 
 .img-fluid {
-  width: 100%;
   height: auto;
 }
 
@@ -297,6 +296,86 @@
 .card button:hover {
   opacity: 0.7;
 }
+
+shopping-cart-card{
+    text-align: left;
+}
+
+cart-header.head-text{
+    padding-left: 2em;
+}
+
+.shopping-cart-card {
+    max-width: 20%;
+    margin: 1em;
+}
+
+.table{
+    width: 100%;
+}
+
+
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th, tr, td {
+    column-width: 10%;
+   text-align: left
+}
+
+td a { 
+   display: block;
+    text-decoration: none!important;
+    text-decoration-color: black!important;
+   color:black;
+}
+
+td{
+    
+}
+
+
+.fa-times{
+    color:black;
+    
+}
+
+.fa-times:hover{
+    color: red;
+}
+
+.proceed-btn{
+    margin-bottom: 1em;
+}
+
+#proceed {
+    background-color: gainsboro;
+    border-color: gainsboro;
+    color: green;
+}
+
+#proceed:hover{
+    background-color: darkgreen;
+    border-color: green;
+    color: gainsboro;
+}
+
+#empty{
+    background-color: gainsboro;
+    border-color: gainsboro;
+    color:red;
+}
+    
+#empty:hover{
+    background-color: darkred;
+    border-color: darkred;
+    color: gainsboro;
+    
+}
+
 
 /* Border for footer WIP */
 /* .footer-cell {
