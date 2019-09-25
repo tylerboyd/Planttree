@@ -323,16 +323,13 @@ th, tr, td {
    text-align: left
 }
 
-td a { 
+.td a { 
    display: block;
     text-decoration: none!important;
     text-decoration-color: black!important;
    color:black;
 }
 
-td{
-    
-}
 
 
 .fa-times{
@@ -348,25 +345,25 @@ td{
     margin-bottom: 1em;
 }
 
-#proceed {
+.proceed {
     background-color: gainsboro;
     border-color: gainsboro;
     color: green;
 }
 
-#proceed:hover{
+.proceed:hover{
     background-color: darkgreen;
     border-color: green;
     color: gainsboro;
 }
 
-#empty{
+.empty{
     background-color: gainsboro;
     border-color: gainsboro;
     color:red;
 }
     
-#empty:hover{
+.empty:hover{
     background-color: darkred;
     border-color: darkred;
     color: gainsboro;
