@@ -308,7 +308,8 @@ cart-header.head-text{
 }
 
 .table{
-    width: 100%;
+    width: 80%;
+    border-color: green;
 }
 
 
@@ -346,30 +347,46 @@ td{
 
 .proceed-btn{
     margin-bottom: 1em;
+    
 }
 
 #proceed {
     background-color: gainsboro;
     border-color: gainsboro;
     color: green;
+    display: block;
+    width: 75%;
+    margin: 0 auto;
 }
 
 #proceed:hover{
     background-color: darkgreen;
     border-color: green;
     color: gainsboro;
+    width: 80%;
 }
 
 #empty{
+   
     background-color: gainsboro;
     border-color: gainsboro;
     color:red;
+    
+    display: block;
+    width: 75%;
+    margin: 0 auto;
 }
     
 #empty:hover{
     background-color: darkred;
     border-color: darkred;
     color: gainsboro;
+    width: 80%;
+    
+}
+
+#container{ 
+    text-align: center;
     
 }
 
