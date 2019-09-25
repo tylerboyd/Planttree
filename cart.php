@@ -43,10 +43,10 @@
 			$total_Price = 0;
 			?>
 			<div id="cart-header" style="p-10;">
-    <h5 id="head-text" style="text-align: left;"> &nbsp; Your Cart </h5>
+    <h5 id="head-text" style="text-align: center;"> &nbsp; <br>Your Cart<br> </h5>
     </div>
 	
-            <table class="table table-sm table-hover">
+            <table class="table table-sm table-hover" align="center>
               <thead style="thead-dark">
                 <tr>
                   <th scope="col" style="text-align:center;">Name</th>
