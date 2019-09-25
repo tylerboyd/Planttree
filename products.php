@@ -63,7 +63,7 @@ if (!empty($_GET["action"])) {
 		<!--Slick Slider-->
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 		<!-- Custom Stylesheet-->
-		<link rel="stylesheet" href="custom-styles.css">
+		<link rel="stylesheet" href="styles/custom-styles.css">
 
 	</Head>
 
@@ -72,8 +72,9 @@ if (!empty($_GET["action"])) {
 		<header>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4 col-sm-12 col-12"></div>
-					<div class="col-md-4 col-sm-12 col-12 text-center">
+					<!-- <div class="col-md-4 col-sm-12 col-12"></div> -->
+					<!-- <div class="col-md-4 col-sm-12 col-12 text-center"> -->
+					<div class="text-center">
 						<img src="Assets/Logos/PlantATree.png" alt="Plant a Tree" style="width:100px;height:100px">
 					</div>
 				</div>
@@ -126,31 +127,51 @@ if (!empty($_GET["action"])) {
 			</div>
 		</header>
 		<!--/Header-->
-			<?php
-			$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
-			if (!empty($product_array)) {
-				foreach ($product_array as $key => $value) {
-					?>
-					<div class="product-item">
-						<form method="post" action="products.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
-							<div class="product-Image">
-								<img src="images/<?php echo $product_array[$key]["Image"]; ?> " />
-							</div>
-							<div class="product-tile-footer">
-								<form action="products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>">
-									<input type="hidden" name="hidden_code" value=<?php echo $product_array[$key]["Code"]; ?> />
-									<a class="product-title" href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $product_array[$key]["Name"]; ?></a>
-								</form>
-								<div class="product-Price"><?php echo "$" . $product_array[$key]["Price"]; ?></div>
-								<div class="cart-action"><input type="text" class="product-quantity" Name="quantity" value="1" pattern="[0-99]" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
-							</div>
-						</form>
-					</div>
-			<?php
+
+		<div class="row justify-content-md-center">
+			<div class="col col-md bg-dark">
+				1 of 3
+			</div>
+			<div class="col col-md-9  bg-danger ">
+				Variable width content
+				<div class="row justify-content-md-center">
+				<?php
+
+
+				$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
+				if (!empty($product_array)) {
+					foreach ($product_array as $key => $value) {
+						?>
+
+
+
+
+						<div class="product-item">
+
+							<form method="post" action="products.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
+								<div class="product-Image">
+									<img class="img-thumbnail products-thumb" src="images/<?php echo $product_array[$key]["Image"]; ?> " />
+								</div>
+								<div class="product-tile-footer">
+									<form action="products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>">
+										<input type="hidden" name="hidden_code" value=<?php echo $product_array[$key]["Code"]; ?> />
+										<a class="product-title" href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $product_array[$key]["Name"]; ?></a>
+									</form>
+									<div class="product-Price"><?php echo "$" . $product_array[$key]["Price"]; ?></div>
+									<div class="cart-action"><input type="text" class="product-quantity" Name="quantity" value="1" pattern="[0-99]" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+								</div>
+							</form>
+						</div>
+
+				<?php
+
+					}
 				}
-			}
-			?>
-			
+				?>
+				</div>
+			</div>
+		</div>
+
 		</div>
 	</Body>
 
