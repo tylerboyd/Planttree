@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
         
     <!-- Custom Stylesheet-->
-    <link rel="stylesheet" href="/styles/styletest.css">
+    <link rel="stylesheet" href="styles/custom-styles.css">
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,8 +46,8 @@
     <h5 id="head-text" style="text-align: center;"> &nbsp; <br>Your Cart<br> </h5>
     </div>
 	
-            <table class="table table-sm table-hover" align="center>
-              <thead style="thead-dark">
+            <table class="table table-sm table-hover" align="center">
+              <thead class="thead-dark">
                 <tr>
                   <th scope="col" style="text-align:center;">Name</th>
                   <th scope="col" style="text-align:center;">Code</th>
@@ -90,8 +90,9 @@
 			</table>
 			</div>	
 			</div>
-			<div class="proceed-actions">
-			<div class="proceed-btn">
+			
+			<div id="container">
+			<div class="proceed-btn" >
 			<a href="checkout.php" class="btn btn-primary btn-block" id="proceed">Proceed to Checkout</a>
 			</div>
 			
