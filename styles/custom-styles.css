@@ -144,6 +144,11 @@
     text-align: center;
 }
 
+.price-products-form {
+    /* max-width: 50px; */
+    text-align: center;
+}
+
 .card{
     border: 0px; 
     

@@ -130,7 +130,157 @@ if (!empty($_GET["action"])) {
 		<div class="row justify-content-md-center mt-3 ml-3 mr-3">
 			<div class="col-lg-3 border">
 				<h3 class="mt-2">Filters</h3>
+				<h4 class="mt-2">Categories</h4>
+
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Select Categories
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<!-- Can probably put a loop here for categories -->
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Check me out</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Check me out</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Check me out</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Check me out</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Check me out</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Check me out</label>
+						</div>
+					</div>
+				</div>
+
+				<h4 class="mt-2">Price</h4>
+				<div class="row">
+					<div class="col-sm">
+						<input type="text" class="product-price-low form-control mb-2 price-products-form" Name="price-low" maxlength="3" size="3" value="Any" />
+					</div>
+					<div class="col-sm-2">
+						<p class="text-center mt-1"> to </p>
+					</div>
+					<div class="col-sm">
+						<input type="text" class="product-price-high form-control mb-2 price-products-form" Name="price-high" maxlength="3" size="3" value="Any" />
+					</div>
+				</div>
+
+				<h4 class="mt-2">Soil Drainage</h4>
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Soil Drainage
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<!-- Can probably put a loop here for categories -->
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">option</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">option</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">option</label>
+						</div>
+					</div>
+				</div>
+				<h4 class="mt-2">Sun Requirement</h4>
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Sun Requirement
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<!-- Can probably put a loop here for categories -->
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">option</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">option</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">option</label>
+						</div>
+					</div>
+				</div>
+				<h4 class="mt-2">Maintenance</h4>
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Maintenance
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<!-- Can probably put a loop here for categories -->
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">option</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">option</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">option</label>
+						</div>
+					</div>
+				</div>
+
+				<h4 class="mt-2">Max Height</h4>
+				<div class="row">
+					<div class="col-sm">
+						<input type="text" class="product-height-low form-control mb-2 price-products-form" Name="height-low" maxlength="3" size="3" value="Any" />
+					</div>
+					<div class="col-sm-2">
+						<p class="text-center mt-1"> to </p>
+					</div>
+					<div class="col-sm">
+						<input type="text" class="product-height-high form-control mb-2 price-products-form" Name="height-high" maxlength="3" size="3" value="Any" />
+					</div>
+				</div>
+
+				<h4 class="mt-2">Growth Rate</h4>
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Growth Rate
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<!-- Can probably put a loop here for categories -->
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">option</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">option</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">option</label>
+						</div>
+					</div>
+				</div>
+				<input type="submit" value="Apply Filter" class="btnAddAction mt-3 btn btn-primary" />
 			</div>
+
+
+
 			<div class="col-lg ">
 
 				<?php
@@ -163,7 +313,7 @@ if (!empty($_GET["action"])) {
 											<div class="product-Price"><?php echo "$" . $product_array[$key]["Price"]; ?></div>
 										</h3>
 										<div class="cart-action float-right">
-											<input type="text" class="product-quantity  form-control mb-2" Name="quantity" maxlength="2" size="2" value="1" pattern="[0-99]" />
+											<input type="text" class="product-quantity form-control mb-2" Name="quantity" maxlength="2" size="2" value="1" pattern="[0-99]" />
 											<input type="submit" value="Add to Cart" class="btnAddAction btn btn-lg btn-primary" />
 										</div>
 									</div>
