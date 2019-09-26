@@ -113,6 +113,42 @@
 }
 
 /* Customs for item.php */
+
+@media screen and (min-width: 250px) {
+
+    .scale-text-center {
+        text-align: center!important;
+    }
+    .scale-price-center {
+        text-align: center!important;
+    }
+
+    .max-column {
+        width: 100%;
+    }
+
+    .prod-qty-maxwidth {
+        max-width: 250px;
+    }
+
+    .scale-float-center {
+        float: none;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    .scale-text-center {
+        text-align: left!important;
+    }
+    .scale-price-center {
+        text-align: right!important;
+    }
+    .scale-float-center {
+        float: right;
+    }
+  }
+
 .qty-text-area {
     border: 0;
     box-shadow: none;
