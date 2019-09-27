@@ -10,8 +10,6 @@
     --sofia: "Sofia", cursive;
 }
 
-
-
 .primary-color{
     color: var(--primary-color);
 }
@@ -38,10 +36,7 @@
     font-family: var(--roboto);
 }
 
-
 /*Slider One*/
-
-
 
 .site-slider{
     position: relative;
@@ -167,7 +162,6 @@ cart-header.head-text{
 }
 
 
-
 th, td {
     padding: 10px;
     text-align: left;
@@ -201,7 +195,6 @@ td{
 
 .proceed-btn{
     margin-bottom: 1em;
-    
 }
 
 #proceed {
@@ -211,6 +204,7 @@ td{
     display: block;
     width: 75%;
     margin: 0 auto;
+
 }
 
 #proceed:hover{
@@ -225,11 +219,11 @@ td{
     background-color: gainsboro;
     border-color: gainsboro;
     color:red;
-    
     display: block;
     width: 75%;
     margin: 0 auto;
 }
+
     
 #empty:hover{
     background-color: darkred;
@@ -244,16 +238,43 @@ td{
     
 }
 
-
-/* Border for footer WIP */
-/* .footer-cell {
-    border: solid #adadad 1px;
-} */
-
-/* Customs for item.php ends */
-
-
 /* Customs for item.php */
+
+@media screen and (min-width: 250px) {
+
+    .scale-text-center {
+        text-align: center!important;
+    }
+    .scale-price-center {
+        text-align: center!important;
+    }
+
+    .max-column {
+        width: 100%;
+    }
+
+    .prod-qty-maxwidth {
+        max-width: 250px;
+    }
+
+    .scale-float-center {
+        float: none;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    .scale-text-center {
+        text-align: left!important;
+    }
+    .scale-price-center {
+        text-align: right!important;
+    }
+    .scale-float-center {
+        float: right;
+    }
+  }
+
 .qty-text-area {
     border: 0;
     box-shadow: none;
