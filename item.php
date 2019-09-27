@@ -44,7 +44,9 @@ if (!empty($_GET["action"])) {
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a7d4a476f6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/custom-styles.css">
+    
 
 </head>
 
@@ -126,6 +128,7 @@ if (!empty($_GET["action"])) {
         <div class="col-lg">
             <!-- Empty space below item image -->
         </div>
+      
 		<div class="col-lg text-center">
 		<form method="post" action="item.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
             <div class="quantity-panel">
@@ -143,13 +146,14 @@ if (!empty($_GET["action"])) {
             </div>
         </div>
     </div>
+
 	</form>
 	
 	<?php
 					}
 				}
 				?>
-	
+
     <!-- Footer starts here -->
     
         <?php
