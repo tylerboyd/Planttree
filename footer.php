@@ -1,5 +1,5 @@
-<div class="row mt-5 footer-cell bg-light">
-    <div class="col-sm footer-cell">
+<div class="row mt-5 mb-5 footer-cell bg-light">
+    <div class="col-sm ml-2 footer-cell">
         <br>
         <h5>Services</h5>
         <nav class="nav flex-column">
@@ -8,7 +8,7 @@
             <a class="nav-link" href="#">AR Trees</a>
         </nav>
     </div>
-    <div class="col-sm footer-cell">
+    <div class="col-sm ml-2 footer-cell">
         <br>
         <h5>Payment Methods</h5>
         <nav class="nav flex-column">
@@ -17,7 +17,7 @@
             <a class="nav-link" href="#">Link</a>
         </nav>
     </div>
-    <div class="col-sm">
+    <div class="col-sm ml-2">
         <br>
         <h5>Quicklinks</h5>
         <nav class="nav flex-column">
@@ -30,7 +30,7 @@
 
         </nav>
     </div>
-    <div class="col-sm">
+    <div class="col-sm mr-2 ml-2">
         <br>
         <h5>Help</h5>
         <nav class="nav flex-column">

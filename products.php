@@ -48,6 +48,10 @@ if (!empty($_GET["action"])) {
 	<Head>
 		<title>Plant a Tree </title>
 
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 		<!--Bootstrap CDN-->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -63,100 +67,239 @@ if (!empty($_GET["action"])) {
 		<!--Slick Slider-->
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 		<!-- Custom Stylesheet-->
-		<link rel="stylesheet" href="custom-styles.css">
+		<link rel="stylesheet" href="styles/custom-styles.css">
 
 	</Head>
 
 	<Body>
 		<!--Header-->
 		<header>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 col-sm-12 col-12"></div>
-					<div class="col-md-4 col-sm-12 col-12 text-center">
-						<img src="Assets/Logos/PlantATree.png" alt="Plant a Tree" style="width:100px;height:100px">
-					</div>
-				</div>
-			</div>
+			
+			<!-- Banner starts -->
+			<?php include("banner.php"); ?>
+			<!-- Banner ends -->
 
-			<!--Nav Bar (Apply to other pages-->
-			<div class="container-fluid p-0">
+			<!-- Navbar starts -->
+			<?php include("nav.php"); ?>
+			<!-- Navbar ends -->
 
-				<nav class="navbar navbar-expand-lg navbar-light bg-light">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav mr-auto">
-							<li class="nav-item active">
-								<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="products.php">Trees</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="products.php">Related Products</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="products.php">Contact Us</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="products.php">Locations</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="products.php">Help</a>
-							</li>
-						</ul>
-						<form action="searchshop.php" method="GET" class="form-inline my-2 my-lg-0">
-							<input class="form-control mr-sm-2" type="search" placeholder="Search for a product" aria-label="Search for a product" name="search">
-							<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-						</form>
-						<div class="cart form-inline my-2 my-lg-0 text-right p-3">
-							<ul class="navbar-nav mr-auto">
-								<li class="nav-item">
-									<a href="cart.php"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
-								</li>
-
-							</ul>
-						</div>
-					</div>
-
-				</nav>
-			</div>
 		</header>
 		<!--/Header-->
 
-		<div id="product-grid">
-			<div class="txt-heading">Products</div>
-			<?php
+		<div class="row mt-3 ml-3 mr-3">
+			<div class="col-lg-2 border">
 
-			function displayAll() {
-			$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
-			if (!empty($product_array)) {
-				foreach ($product_array as $key => $value) {
-					?>
-					<div class="product-item">
-						<form method="post" action="products.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
-							<div class="product-Image">
-								<img src="images/<?php echo $product_array[$key]["Image"]; ?> " />
-							</div>
-							<div class="product-tile-footer">
-								<form action="products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>">
-									<input type="hidden" name="hidden_code" value=<?php echo $product_array[$key]["Code"]; ?> />
-									<a class="product-title" href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $product_array[$key]["Name"]; ?></a>
-								</form>
-								<div class="product-Price"><?php echo "$" . $product_array[$key]["Price"]; ?></div>
-								<div class="cart-action"><input type="text" class="product-quantity" Name="quantity" value="1" pattern="[0-99]" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
-							</div>
-						</form>
+				<h3 class="mt-2">Filters</h3>
+				<!-- <h4 class="mt-2">Categories</h4> -->
+
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Select Categories
+					</button>
+					<div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
+						<!-- Can probably put a loop here for categories -->
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Fruit Trees</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Hedges</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Evergreen Trees</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">NZ Native</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Gum Trees</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Palm Trees</label>
+						</div>
 					</div>
-			<?php
-				}
-			}
-			?>
+				</div>
+
+				<h4 class="mt-2">Price</h4>
+				<div class="row">
+					<div class="col-sm">
+						<input type="text" class="product-price-low form-control mb-2 price-products-form" Name="price-low" maxlength="3" size="3" value="Any" />
+					</div>
+					<div class="col-sm-2">
+						<p class="text-center mt-1"> to </p>
+					</div>
+					<div class="col-sm">
+						<input type="text" class="product-price-high form-control mb-2 price-products-form" Name="price-high" maxlength="3" size="3" value="Any" />
+					</div>
+				</div>
+
+				<!-- <h4 class="mt-2">Soil Drainage</h4> -->
+				<div class="dropdown mt-2 mb-3">
+					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Soil Drainage
+					</button>
+					<div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
+						<!-- Can probably put a loop here for categories -->
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Fast</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Medium</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Low</label>
+						</div>
+					</div>
+				</div>
+				<!-- <h4 class="mt-2">Sun Requirement</h4> -->
+				<div class="dropdown mt-3 mb-3">
+					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Sun Requirement
+					</button>
+					<div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
+						<!-- Can probably put a loop here for categories -->
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Sunny</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Medium</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Shade</label>
+						</div>
+					</div>
+				</div>
+				<!-- <h4 class="mt-2">Maintenance</h4> -->
+				<div class="dropdown mt-3 mb-2">
+					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Maintenance
+					</button>
+					<div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
+						<!-- Can probably put a loop here for categories -->
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">High</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Medium</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Low</label>
+						</div>
+					</div>
+				</div>
+
+				<h4 class="mt-2">Max Height</h4>
+				<div class="row">
+					<div class="col-sm">
+						<input type="text" class="product-height-low form-control mb-2 price-products-form" Name="height-low" maxlength="3" size="3" value="Any" />
+					</div>
+					<div class="col-sm-2">
+						<p class="text-center mt-1"> to </p>
+					</div>
+					<div class="col-sm">
+						<input type="text" class="product-height-high form-control mb-2 price-products-form" Name="height-high" maxlength="3" size="3" value="Any" />
+					</div>
+				</div>
+
+				<!-- <h4 class="mt-2">Growth Rate</h4> -->
+				<div class="dropdown mt-2 mb-2">
+					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Growth Rate
+					</button>
+					<div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
+						<!-- Can probably put a loop here for categories -->
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Fast</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Medium</label>
+						</div>
+						<div class="dropdown-item">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Slow</label>
+						</div>
+					</div>
+				</div>
+				<input type="submit" value="Apply Filter" class="btnAddAction mt-3 mb-3 btn btn-primary btn-block" />
+			</div>
 			
+			<div class="col">
+
+				<?php
+				$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
+				if (!empty($product_array)) {
+					foreach ($product_array as $key => $value) {
+						?>
+
+						<div class="row-4 mt-3 border bg-light text-center">
+
+							<form method="post" action="products.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
+
+								<div class="row">
+
+									<div class="col-lg-3 mt-1 ml-1 mr-1 mb-1">
+										<img class="img-thumbnail products-thumb" src="images/<?php echo $product_array[$key]["Image"]; ?> " />
+									</div>
+
+									<div class="col-lg mt-2 text-left scale-text-center">
+										<h3>
+											<form action="products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>">
+												<input type="hidden" name="hidden_code" value=<?php echo $product_array[$key]["Code"]; ?> />
+												<a class="product-title" href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $product_array[$key]["Name"]; ?></a>
+											</form>
+										</h3>
+									</div>
+
+									<div class="col-lg text-right mr-3 scale-price-center">
+										<h3>
+											<div class="product-Price"><?php echo "$" . $product_array[$key]["Price"]; ?><br></div>
+										</h3>
+										<div class="cart-action form-inline justify-content-center mt-3 scale-float-center">
+											<input type="text" class="product-quantity form-control mr-1 ml-1 prod-qty-maxwidth btn-lg" Name="quantity" maxlength="2" size="2" value="1" pattern="[0-99]" />
+											<input type="submit" value="Add to Cart" class="btnAddAction btn btn-lg btn-primary mr-1 ml-1" />
+										</div>
+									</div>
+
+								</div>
+
+							</form>
+
+						</div>
+
+				<?php
+					}
+				}
+				?>
+
+
+			</div>
 		</div>
+
+		<!-- Footer starts here -->
+		<?php
+		include("footer.php");
+		?>
+		<div class="mt-5">
+			<!-- padding -->
+		</div>
+		<!-- Footer ends -->
+
 	</Body>
 
 	</HTML>
