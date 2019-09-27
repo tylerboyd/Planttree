@@ -4,33 +4,6 @@ require_once("dbcontroller.php");
 $db_handle = new DBController();
 $itemListing = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["Code"] . "'");
 
-if (!empty($_GET["action"])) {
-	switch ($_GET["action"]) {
-		case "add":
-			if (!empty($_POST["quantity"])) {
-				$productByCode = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["Code"] . "'");
-				$itemArray = array($productByCode[0]["Code"] => array('Name' => $productByCode[0]["Name"], 'Code' => $productByCode[0]["Code"], 'quantity' => $_POST["quantity"], 'Price' => $productByCode[0]["Price"], 'Image' => $productByCode[0]["Image"]));
-
-				if (!empty($_SESSION["cart_item"])) {
-					if (in_array($productByCode[0]["Code"], array_keys($_SESSION["cart_item"]))) {
-						foreach ($_SESSION["cart_item"] as $k => $v) {
-							if ($productByCode[0]["Code"] == $k) {
-								if (empty($_SESSION["cart_item"][$k]["quantity"])) {
-									$_SESSION["cart_item"][$k]["quantity"] = 0;
-								}
-								$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
-							}
-						}
-					} else {
-						$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"], $itemArray);
-					}
-				} else {
-					$_SESSION["cart_item"] = $itemArray;
-				}
-			}
-			break;
-	}
-}
 ?>
 
 <!doctype html>
