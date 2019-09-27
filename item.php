@@ -129,7 +129,7 @@ if (!empty($_GET["action"])) {
         </div>
 
     </div>
-	<form>
+	<form action="products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>>
     <div class="row mt-5 ml-5 mr-5">
         <div class="col-lg">
             <!-- Empty space below item image -->
@@ -140,7 +140,7 @@ if (!empty($_GET["action"])) {
                     <label class="btn btn-secondary">
                         <input type="radio" name="options" id="minusQuantity" autocomplete="off">-</label>
                     <label class="btn btn-secondary">
-                        <input type="text" class="form-control qty-text-area" maxlength="2" size="2" id="itemQuantity" value="1">
+                        <input type="text" class="form-control qty-text-area" maxlength="2" size="2" id="itemQuantity" value="1" Name="quantity"/>
                     </label>
                     <label class="btn btn-secondary">
                         <input type="radio" name="options" id="addQuantity" autocomplete="off">+</label>
