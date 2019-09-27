@@ -106,7 +106,7 @@ $itemListing = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["C
                 </div>
             </div>
             <div class="cart-panel mt-3">
-                <input type="submit" class="btnAddAction btn btn-lg btn-primary mr-1 ml-1">Add to Wheelbarrow</button>
+                <input type="submit" value="Add to Cart" class="btnAddAction btn btn-lg btn-primary mr-1 ml-1">Add to Wheelbarrow</button>
                 <button type="button" class="btn btn-primary btn-block btn-lg" onclick="location.href = 'cart.php';">Go to Checkout</button>
             </div>
         </div>
