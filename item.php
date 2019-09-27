@@ -126,8 +126,8 @@ if (!empty($_GET["action"])) {
         <div class="col-lg">
             <!-- Empty space below item image -->
         </div>
+		<div class="col-lg text-center">
 		<form method="post" action="item.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
-        <div class="col-lg text-center">
             <div class="quantity-panel">
                     <label class="btn btn-secondary">
                         <input type="button" id="decrease" onclick="decreaseValue()" autocomplete="off">-</label>
@@ -138,8 +138,8 @@ if (!empty($_GET["action"])) {
                         <input type="button" id="increase" onclick="increaseValue()" autocomplete="off">+</label>
             </div>
             <div class="cart-panel mt-3">
-                <input type="submit" value="Add to Wheelbarrow" class="btnAddAction btn btn-lg btn-primary mr-1 ml-1"></button>
-                <button type="submit" class="btn btn-primary btn-block btn-lg" onclick="location.href = 'cart.php';">Go to Checkout</button>
+                <input type="submit" value="Add to Wheelbarrow" class="btnAddAction btn btn-lg btn-primary button-block mr-1 ml-1"></button>
+                <button type="button" class="btn btn-primary btn-block btn-lg mr-1 ml-1" onclick="location.href = 'cart.php';">Go to Checkout</button>
             </div>
         </div>
     </div>
