@@ -160,6 +160,11 @@ if (!empty($_GET["action"])) {
         </div>
     </div>
 	</form>
+	
+	<?php
+			}
+		}
+	?>
 
     <!-- Footer starts here -->
     
