@@ -8,7 +8,7 @@ function increaseValue(){
 function decreaseValue(){
 	var value = parseInt(document.getElementById('number').value, 10);
 	value = isNaN(value)? 1 : value;
-	value < 2 ? value = 2 : '';
+	value < 1 ? value = 1 : '';
 	value--;
 	document.getElementById('number').value = value;
 }

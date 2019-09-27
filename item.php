@@ -29,19 +29,6 @@ if (!empty($_GET["action"])) {
 				}
 			}
 			break;
-		case "remove":
-			if (!empty($_SESSION["cart_item"])) {
-				foreach ($_SESSION["cart_item"] as $k => $v) {
-					if ($_GET["Code"] == $k)
-						unset($_SESSION["cart_item"][$k]);
-					if (empty($_SESSION["cart_item"]))
-						unset($_SESSION["cart_item"]);
-				}
-			}
-			break;
-		case "empty":
-			unset($_SESSION["cart_item"]);
-			break;
 	}
 }
 ?>
@@ -139,6 +126,7 @@ if (!empty($_GET["action"])) {
         <div class="col-lg">
             <!-- Empty space below item image -->
         </div>
+		<form method="post" action="item.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
         <div class="col-lg text-center">
             <div class="quantity-panel">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
