@@ -130,12 +130,12 @@ if (!empty($_GET["action"])) {
         <div class="col-lg text-center">
             <div class="quantity-panel">
                     <label class="btn btn-secondary">
-                        <input type="button" id="decrease" onclick="decreaseValue()" value="-" autocomplete="off">-</label>
+                        <input type="button" id="decrease" onclick="decreaseValue()" autocomplete="off">-</label>
                     <label class="btn btn-secondary">
                         <input type="text" class="form-control qty-text-area" maxlength="2" size="2" id="number" value="1" Name="quantity"/>
                     </label>
                     <label class="btn btn-secondary">
-                        <input type="button" id="increase" onclick="increaseValue()" value="+" autocomplete="off">+</label>
+                        <input type="button" id="increase" onclick="increaseValue()" autocomplete="off">+</label>
             </div>
             <div class="cart-panel mt-3">
                 <input type="submit" value="Add to Wheelbarrow" class="btnAddAction btn btn-lg btn-primary mr-1 ml-1"></button>
