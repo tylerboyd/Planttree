@@ -41,152 +41,6 @@
 
 /*Slider One*/
 
-.site-slider{
-    position: relative;
-}
-
-.position-top{
- position:absolute;
-    top: 40%;
-}
-
-
-.site-slider .slider-btn .previous,
-.site-slider .slider-btn .next{
-    background-color:darkgreen;
-    padding: 1rem 1.5rem;
-    border-radius: 10rem;
-    color: white;
-    margin: 0 1rem;
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-.site-slider:hover .slider-btn .previous,
-.site-slider:hover .slider-btn .next{
-    opacity: 1;
-}
-
-.right-0
-{
-    right: 0;
-}
-
-.position-left-0
-{
-    left: 0 !important;
-}
-
-/* Slick Dots*/
-
-.slick-dots{
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding 1rem 0;
-    list-style-type: none;
-    position: absolute;
-    bottom: 0;
-    right: 50%;
-    width: 0%;
-    left: inherit;
-}
-
-.slick-dots li{
-    margin: 0 0.6rem;
-}
-
-.slick-dots button{
-    display: black;
-    width: 0.5rem;
-    height: 0.5rem;
-    padding: 0;
-    border: none;
-    background-color: white;
-    text-indent: -99999px;
-    border-radius: 100%;
-}
-
-.slick-dots li.slick-active button{
-    transform: scale(2.5);
-    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 2.205);
-}
-
-/* Customs for item.php */
-.qty-text-area {
-    border: 0;
-    box-shadow: none;
-    background: none;
-    color: white;
-    text-align: center;
-}
-
-/* .qty-text-area: {
-    outline: none;
-}  */
-/* .qty-btn:focus:active:visited:checked {
-    outline: none;
-    box-shadow: none;
-    background: red;
-    color: red;
-}  */
-
-banner-image {
-    max-height: 200px;
-}
-
-.card{
-    border: 0px; 
-    
-}
-
-.img-fluid {
-  height: auto;
-}
-
-/* Import fonts from google fonts*/
-
-@import url('https://fonts.googleapis.com/css?family=Anton|Gugi|Lato|Roboto|Sofia&display=swap');
-
-
-:root{
-    --primary-color: #e5df45;
-    --roboto: "Roboto", sans-serif;
-    --gugi: "Gugi", cursive;
-    --sofia: "Sofia", cursive;
-}
-
-
-
-.primary-color{
-    color: var(--primary-color);
-}
-
-.fa-shopping-cart{
-    color: black
-}
-
-.font-roboto{
-    font-family: var(--roboto)
-}
-
-.navbar-nav{
-    padding: 0.8em 0em;
-}
-
-.navbar-nav ,nav-link{
-    font-family: var(--roboto);
-    font-size: 1.1em;
-    color:currentColor;
-}
-
-.form-inline{
-    font-family: var(--roboto);
-}
-
-
-/*Slider One*/
-
 
 
 .site-slider{
@@ -233,7 +87,7 @@ banner-image {
     display: flex;
     justify-content: center;
     margin: 0;
-    padding 1rem 0;
+    padding: 1rem 0;
     list-style-type: none;
     position: absolute;
     bottom: 0;
@@ -308,7 +162,8 @@ cart-header.head-text{
 }
 
 .table{
-    width: 100%;
+    width: 98%;
+    border-color: green;
 }
 
 
@@ -323,13 +178,16 @@ th, tr, td {
    text-align: left
 }
 
-.td a { 
+td a { 
    display: block;
     text-decoration: none!important;
     text-decoration-color: black!important;
    color:black;
 }
 
+td{
+    
+}
 
 
 .fa-times{
@@ -343,30 +201,46 @@ th, tr, td {
 
 .proceed-btn{
     margin-bottom: 1em;
+    
 }
 
-.proceed {
+#proceed {
     background-color: gainsboro;
     border-color: gainsboro;
     color: green;
+    display: block;
+    width: 75%;
+    margin: 0 auto;
 }
 
-.proceed:hover{
+#proceed:hover{
     background-color: darkgreen;
     border-color: green;
     color: gainsboro;
+    width: 80%;
 }
 
-.empty{
+#empty{
+   
     background-color: gainsboro;
     border-color: gainsboro;
     color:red;
+    
+    display: block;
+    width: 75%;
+    margin: 0 auto;
 }
     
-.empty:hover{
+#empty:hover{
     background-color: darkred;
     border-color: darkred;
     color: gainsboro;
+    width: 80%;
+    
+}
+
+#container{ 
+    text-align: center;
     
 }
 
@@ -377,3 +251,36 @@ th, tr, td {
 } */
 
 /* Customs for item.php ends */
+
+
+/* Customs for item.php */
+.qty-text-area {
+    border: 0;
+    box-shadow: none;
+    background: none;
+    color: white;
+    text-align: center;
+}
+
+/* .qty-text-area: {
+    outline: none;
+}  */
+/* .qty-btn:focus:active:visited:checked {
+    outline: none;
+    box-shadow: none;
+    background: red;
+    color: red;
+}  */
+
+.banner-image {
+    max-height: 200px;
+}
+
+.card{
+    border: 0px; 
+    
+}
+
+.img-fluid {
+  height: auto;
+}

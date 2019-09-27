@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     
     <!-- Custom Stylesheet-->
-    <link rel="stylesheet" href="styles/styletest.css">
+    <link rel="stylesheet" href="styles/custom-styles.css">
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -134,7 +134,7 @@
   </div>
 </div>
  
- <div class="card" style="width: 35%; float left">
+ <div class="card" style="width: 35%; float: left;">
   <div class="card-body">
     <h5 class="card-title">Our Services</h5>
     <h6 class="card-subtitle mb-2 text-muted">What We Do</h6>
