@@ -130,7 +130,11 @@ if (!empty($_GET["action"])) {
 
     </div>
 	
-						
+		<?php
+				$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
+				if (!empty($product_array)) {
+					foreach ($product_array as $key => $value) {
+						?>				
     <div class="row mt-5 ml-5 mr-5">
         <div class="col-lg">
             <!-- Empty space below item image -->
@@ -154,6 +158,11 @@ if (!empty($_GET["action"])) {
         </div>
     </div>
 	</form>
+	
+	<?php
+					}
+				}
+				?>
 	
     <!-- Footer starts here -->
     
