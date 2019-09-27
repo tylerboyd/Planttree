@@ -129,6 +129,13 @@ if (!empty($_GET["action"])) {
         </div>
 
     </div>
+	
+	<?php
+				$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
+				if (!empty($product_array)) {
+					foreach ($product_array as $key => $value) {
+						?>
+						
 	<form method="post"	action="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>>
     <div class="row mt-5 ml-5 mr-5">
         <div class="col-lg">
