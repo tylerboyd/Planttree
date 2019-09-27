@@ -129,7 +129,7 @@ if (!empty($_GET["action"])) {
         </div>
 
     </div>
-	<form action="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>>
+	<form method="post"	action="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>>
     <div class="row mt-5 ml-5 mr-5">
         <div class="col-lg">
             <!-- Empty space below item image -->
