@@ -118,7 +118,7 @@ if (!empty($_GET["action"])) {
     </div>
 	
 		<?php
-				$product_array = $db_handle->runQuery("SELECT * FROM WHERE ID LIKE '$value'");
+				$product_array = $db_handle->runQuery("SELECT * FROM WHERE Code = '" . $_GET["Code"] . "'");
 				if (!empty($product_array)) {
 					foreach ($product_array as $key => $value) {
 						?>				
