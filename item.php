@@ -119,13 +119,12 @@ if (!empty($_GET["action"])) {
 	
 		<?php
 				$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
-				if (!empty($product_array)) {
 						?>				
     <div class="row mt-5 ml-5 mr-5">
         <div class="col-lg">
             <!-- Empty space below item image -->
         </div>
-		<form method="post" action="item.php?action=&Code=<?php echo $product_array[$key]["Code"]; ?>">
+		<form method="post" action="item.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
         <div class="col-lg text-center">
             <div class="quantity-panel">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -145,11 +144,7 @@ if (!empty($_GET["action"])) {
         </div>
     </div>
 	</form>
-	
-	<?php
-				
-				}
-				?>
+
 	
     <!-- Footer starts here -->
     
