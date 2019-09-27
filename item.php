@@ -139,7 +139,7 @@ if (!empty($_GET["action"])) {
             </div>
             <div class="cart-panel mt-3">
                 <input type="submit" value="Add to Wheelbarrow" class="btnAddAction btn btn-lg btn-primary mr-1 ml-1"></button>
-                <button type="button" class="btn btn-primary btn-block btn-lg" onclick="location.href = 'cart.php';">Go to Checkout</button>
+                <button type="submit" class="btn btn-primary btn-block btn-lg" onclick="location.href = 'cart.php';">Go to Checkout</button>
             </div>
         </div>
     </div>
