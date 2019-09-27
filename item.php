@@ -138,7 +138,7 @@ if (!empty($_GET["action"])) {
                         <input type="button" id="increase" onclick="increaseValue()" autocomplete="off">+</label>
             </div>
             <div class="cart-panel mt-3">
-                <input type="submit" value="Add to Wheelbarrow" class="btnAddAction btn btn-lg btn-primary button-block mr-1 ml-1"></button>
+                <input type="submit" value="Add to Wheelbarrow" class="btnAddAction btn btn-lg btn-primary btn-block mr-1 ml-1"></button>
                 <button type="button" class="btn btn-primary btn-block btn-lg mr-1 ml-1" onclick="location.href = 'cart.php';">Go to Checkout</button>
             </div>
         </div>
