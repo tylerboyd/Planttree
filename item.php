@@ -88,7 +88,7 @@ $itemListing = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["C
         </div>
 
     </div>
-
+	<form>
     <div class="row mt-5 ml-5 mr-5">
         <div class="col-lg">
             <!-- Empty space below item image -->
@@ -106,12 +106,12 @@ $itemListing = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["C
                 </div>
             </div>
             <div class="cart-panel mt-3">
-                <input type="submit" value="Add to Cart" class="btnAddAction btn btn-lg btn-primary mr-1 ml-1">Add to Wheelbarrow</button>
+                <input type="submit" value="Add to Wheelbarrow" class="btnAddAction btn btn-lg btn-primary mr-1 ml-1"></button>
                 <button type="button" class="btn btn-primary btn-block btn-lg" onclick="location.href = 'cart.php';">Go to Checkout</button>
             </div>
         </div>
     </div>
-
+	</form>
 
     <!-- Footer starts here -->
     
