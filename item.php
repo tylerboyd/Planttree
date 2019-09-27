@@ -4,6 +4,33 @@ require_once("dbcontroller.php");
 $db_handle = new DBController();
 $itemListing = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["Code"] . "'");
 
+if (!empty($_GET["action"])) {
+	switch ($_GET["action"]) {
+		case "add":
+			if (!empty($_POST["quantity"])) {
+				$productByCode = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["Code"] . "'");
+				$itemArray = array($productByCode[0]["Code"] => array('Name' => $productByCode[0]["Name"], 'Code' => $productByCode[0]["Code"], 'quantity' => $_POST["quantity"], 'Price' => $productByCode[0]["Price"], 'Image' => $productByCode[0]["Image"]));
+
+				if (!empty($_SESSION["cart_item"])) {
+					if (in_array($productByCode[0]["Code"], array_keys($_SESSION["cart_item"]))) {
+						foreach ($_SESSION["cart_item"] as $k => $v) {
+							if ($productByCode[0]["Code"] == $k) {
+								if (empty($_SESSION["cart_item"][$k]["quantity"])) {
+									$_SESSION["cart_item"][$k]["quantity"] = 0;
+								}
+								$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+							}
+						}
+					} else {
+						$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"], $itemArray);
+					}
+				} else {
+					$_SESSION["cart_item"] = $itemArray;
+				}
+			}
+			break;
+	}
+}
 ?>
 
 <!doctype html>
@@ -92,14 +119,12 @@ $itemListing = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["C
 	
 		<?php
 				$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
-				if (!empty($product_array)) {
-					foreach ($product_array as $key => $value) {
 						?>				
     <div class="row mt-5 ml-5 mr-5">
         <div class="col-lg">
             <!-- Empty space below item image -->
         </div>
-		<form method="post" action="item.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
+		<form method="post" action="item.php?action=&Code=<?php echo $product_array[$key]["Code"]; ?>">
         <div class="col-lg text-center">
             <div class="quantity-panel">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -119,11 +144,6 @@ $itemListing = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["C
         </div>
     </div>
 	</form>
-	
-	<?php
-					}
-				}
-				?>
 	
     <!-- Footer starts here -->
     
