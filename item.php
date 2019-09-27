@@ -129,15 +129,13 @@ if (!empty($_GET["action"])) {
 		<form method="post" action="item.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
         <div class="col-lg text-center">
             <div class="quantity-panel">
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-secondary">
-                        <input type="radio" id="decrease" onclick="decreaseValue()" value="Decrease Value" autocomplete="off">-</label>
+                        <input type="button" id="decrease" onclick="decreaseValue()" value="Decrease Value" autocomplete="off">-</label>
                     <label class="btn btn-secondary">
                         <input type="text" class="form-control qty-text-area" maxlength="2" size="2" id="number" value="1" Name="quantity"/>
                     </label>
                     <label class="btn btn-secondary">
-                        <input type="radio" id="increase" onclick="increaseValue()" value="Increase Value" autocomplete="off">+</label>
-                </div>
+                        <input type="button" id="increase" onclick="increaseValue()" value="Increase Value" autocomplete="off">+</label>
             </div>
             <div class="cart-panel mt-3">
                 <input type="submit" value="Add to Wheelbarrow" class="btnAddAction btn btn-lg btn-primary mr-1 ml-1"></button>
