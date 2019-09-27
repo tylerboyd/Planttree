@@ -3,6 +3,34 @@ session_start();
 require_once("dbcontroller.php");
 $db_handle = new DBController();
 $itemListing = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["Code"] . "'");
+
+if (!empty($_GET["action"])) {
+	switch ($_GET["action"]) {
+		case "add":
+			if (!empty($_POST["quantity"])) {
+				$productByCode = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["Code"] . "'");
+				$itemArray = array($productByCode[0]["Code"] => array('Name' => $productByCode[0]["Name"], 'Code' => $productByCode[0]["Code"], 'quantity' => $_POST["quantity"], 'Price' => $productByCode[0]["Price"], 'Image' => $productByCode[0]["Image"]));
+
+				if (!empty($_SESSION["cart_item"])) {
+					if (in_array($productByCode[0]["Code"], array_keys($_SESSION["cart_item"]))) {
+						foreach ($_SESSION["cart_item"] as $k => $v) {
+							if ($productByCode[0]["Code"] == $k) {
+								if (empty($_SESSION["cart_item"][$k]["quantity"])) {
+									$_SESSION["cart_item"][$k]["quantity"] = 0;
+								}
+								$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+							}
+						}
+					} else {
+						$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"], $itemArray);
+					}
+				} else {
+					$_SESSION["cart_item"] = $itemArray;
+				}
+			}
+			break;
+	}
+}
 ?>
 
 <!doctype html>
@@ -90,30 +118,41 @@ $itemListing = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["C
         </div>
 
     </div>
-
+	
+		<?php
+				$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Code = '" . $_GET["Code"] . "'");
+				if (!empty($product_array)) {
+					foreach ($product_array as $key => $value) {
+						?>				
     <div class="row mt-5 ml-5 mr-5">
         <div class="col-lg">
             <!-- Empty space below item image -->
         </div>
-        <div class="col-lg text-center">
+      
+		<div class="col-lg text-center">
+		<form method="post" action="item.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
             <div class="quantity-panel">
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="minusQuantity" autocomplete="off">-</label>
+                        <input type="button" id="decrease" onclick="decreaseValue()" autocomplete="off">-</label>
                     <label class="btn btn-secondary">
-                        <input type="text" class="form-control qty-text-area" maxlength="2" size="2" id="itemQuantity" value="1">
+                        <input type="text" class="form-control qty-text-area" maxlength="2" size="2" id="number" value="1" Name="quantity"/>
                     </label>
                     <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="addQuantity" autocomplete="off">+</label>
-                </div>
+                        <input type="button" id="increase" onclick="increaseValue()" autocomplete="off">+</label>
             </div>
             <div class="cart-panel mt-3">
-                <button type="button" class="btn btn-primary btn-block btn-lg">Add to Wheelbarrow</button>
-                <button type="button" class="btn btn-primary btn-block btn-lg">Go to Checkout</button>
+                <input type="submit" value="Add to Wheelbarrow" class="btnAddAction btn btn-lg btn-primary btn-block mr-1 ml-1"></button>
+                <button type="button" class="btn btn-primary btn-block btn-lg mr-1 ml-1" onclick="location.href = 'cart.php';">Go to Checkout</button>
             </div>
         </div>
     </div>
 
+	</form>
+	
+	<?php
+					}
+				}
+				?>
 
     <!-- Footer starts here -->
     
@@ -128,5 +167,7 @@ $itemListing = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["C
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="counter.js"></script>
 </body>
+
 </html>
