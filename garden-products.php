@@ -207,7 +207,7 @@ if (!empty($_GET["action"])) {
 
 						<div class="row-4 mt-3 border bg-light text-center">
 
-							<form method="post" action="products.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
+							<form method="post" action="garden-products.php?action=add&Code=<?php echo $product_array[$key]["Code"]; ?>">
 
 								<div class="row">
 
@@ -217,7 +217,7 @@ if (!empty($_GET["action"])) {
 
 									<div class="col-lg mt-2 text-left scale-text-center">
 										<h3>
-											<form action="products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>">
+											<form action="garden-products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>">
 												<input type="hidden" name="hidden_code" value=<?php echo $product_array[$key]["Code"]; ?> />
 												<a class="product-title" href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $product_array[$key]["Name"]; ?></a>
 											</form>
