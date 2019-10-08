@@ -218,6 +218,10 @@
             <input type="checkbox" class="custom-control-input" id="same-address">
             <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
           </div>
+	  <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="opt-in">
+            <label class="custom-control-label" for="opt-in">Opt in for tree maintenance services</label>
+          </div>
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="save-info">
             <label class="custom-control-label" for="save-info">Save this information for next time</label>
