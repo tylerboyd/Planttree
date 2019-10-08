@@ -219,7 +219,7 @@ if (!empty($_GET["action"])) {
 										<h3>
 											<form action="garden-products.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>">
 												<input type="hidden" name="hidden_code" value=<?php echo $product_array[$key]["Code"]; ?> />
-												<a class="product-title" href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $product_array[$key]["Name"]; ?></a>
+												<a class="product-title" href="garden-item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $product_array[$key]["Name"]; ?></a>
 											</form>
 										</h3>
 									</div>
