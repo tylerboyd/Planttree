@@ -254,7 +254,7 @@
 
 				<div class="row-4 mt-3 border bg-light text-center">
 
-					<form method="post" action="products.php?action=add&Code=<?php echo $garden_product_array[$key]["Code"]; ?>">
+					<form method="post" action="garden-products.php?action=add&Code=<?php echo $garden_product_array[$key]["Code"]; ?>">
 
 						<div class="row">
 
@@ -264,9 +264,9 @@
 
 							<div class="col-lg mt-2 text-left scale-text-center">
 								<h3>
-									<form action="products.php?action=item&Code=<?php echo $garden_product_array[$key]["Code"]; ?>">
+									<form action="garden-products.php?action=item&Code=<?php echo $garden_product_array[$key]["Code"]; ?>">
 										<input type="hidden" name="hidden_code" value=<?php echo $garden_product_array[$key]["Code"]; ?> />
-										<a class="product-title" href="item.php?action=item&Code=<?php echo $garden_product_array[$key]["Code"]; ?>"><?php echo $garden_product_array	[$key]["Name"]; ?></a>
+										<a class="product-title" href="garden-item.php?action=item&Code=<?php echo $garden_product_array[$key]["Code"]; ?>"><?php echo $garden_product_array	[$key]["Name"]; ?></a>
 									</form>
 								</h3>
 							</div>
