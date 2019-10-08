@@ -248,7 +248,7 @@
 		<?php
 			}
 		}
-		else if (!empty($garden_product_array)) {
+		if (!empty($garden_product_array)) {
 			foreach ($garden_product_array as $key => $value) {
 				?>
 
@@ -266,7 +266,7 @@
 								<h3>
 									<form action="products.php?action=item&Code=<?php echo $garden_product_array[$key]["Code"]; ?>">
 										<input type="hidden" name="hidden_code" value=<?php echo $garden_product_array[$key]["Code"]; ?> />
-										<a class="product-title" href="item.php?action=item&Code=<?php echo $garden_product_array[$key]["Code"]; ?>"><?php echo $garden_product_array[$key]["Name"]; ?></a>
+										<a class="product-title" href="item.php?action=item&Code=<?php echo $garden_product_array[$key]["Code"]; ?>"><?php echo $garden_product_array	[$key]["Name"]; ?></a>
 									</form>
 								</h3>
 							</div>
