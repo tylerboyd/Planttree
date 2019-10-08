@@ -6,7 +6,7 @@ if (!empty($_GET["action"])) {
 	switch ($_GET["action"]) {
 		case "add":
 			if (!empty($_POST["quantity"])) {
-				$productByCode = $db_handle->runQuery("SELECT * FROM tree WHERE Code='" . $_GET["Code"] . "'");
+				$productByCode = $db_handle->runQuery("SELECT * FROM gardenproducts WHERE Code='" . $_GET["Code"] . "'");
 				$itemArray = array($productByCode[0]["Code"] => array('Name' => $productByCode[0]["Name"], 'Code' => $productByCode[0]["Code"], 'quantity' => $_POST["quantity"], 'Price' => $productByCode[0]["Price"], 'Image' => $productByCode[0]["Image"]));
 
 				if (!empty($_SESSION["cart_item"])) {
@@ -74,7 +74,7 @@ if (!empty($_GET["action"])) {
 	<Body>
 		<!--Header-->
 		<header>
-			
+
 			<!-- Banner starts -->
 			<?php include("banner.php"); ?>
 			<!-- Banner ends -->
@@ -196,11 +196,11 @@ if (!empty($_GET["action"])) {
 
 				<input type="submit" value="Apply Filter" class="btnAddAction mt-3 mb-3 btn btn-primary btn-block" />
 			</div>
-			
+
 			<div class="col">
 
 				<?php
-				$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
+				$product_array = $db_handle->runQuery("SELECT * FROM gardenproducts ORDER BY ID ASC");
 				if (!empty($product_array)) {
 					foreach ($product_array as $key => $value) {
 						?>
