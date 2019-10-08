@@ -248,8 +248,6 @@
 		<?php
 			}
 		}
-		?>
-		<?php>
 		else if (!empty($garden_product_array)) {
 			foreach ($garden_product_array as $key => $value) {
 				?>
