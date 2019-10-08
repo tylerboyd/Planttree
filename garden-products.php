@@ -200,7 +200,7 @@ if (!empty($_GET["action"])) {
 			<div class="col">
 
 				<?php
-				$product_array = $db_handle->runQuery("SELECT * FROM gardenproducts ORDER BY ID ASC");
+				$product_array = $db_handle->runQuery("SELECT * FROM gardenproducts ORDER BY ProductID ASC");
 				if (!empty($product_array)) {
 					foreach ($product_array as $key => $value) {
 						?>

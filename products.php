@@ -74,7 +74,7 @@ if (!empty($_GET["action"])) {
 	<Body>
 		<!--Header-->
 		<header>
-			
+
 			<!-- Banner starts -->
 			<?php include("banner.php"); ?>
 			<!-- Banner ends -->
@@ -157,7 +157,7 @@ if (!empty($_GET["action"])) {
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="dropdown mt-3 mb-3">
 					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Sun Requirement
@@ -235,11 +235,11 @@ if (!empty($_GET["action"])) {
 				</div>
 				<input type="submit" value="Apply Filter" class="btnAddAction mt-3 mb-3 btn btn-primary btn-block" />
 			</div>
-			
+
 			<div class="col">
 
 				<?php
-				$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ID ASC");
+				$product_array = $db_handle->runQuery("SELECT * FROM tree ORDER BY ProductID ASC");
 				if (!empty($product_array)) {
 					foreach ($product_array as $key => $value) {
 						?>
