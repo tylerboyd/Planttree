@@ -83,13 +83,13 @@
       <h4 class="mt-2">Price</h4>
       <div class="row">
         <div class="col-sm">
-          <input type="text" class="product-price-low form-control mb-2 price-products-form" name="price-low" maxlength="3" size="3" value="0" />
+          <input type="text" class="product-price-low form-control mb-2 price-products-form" name="price-low" maxlength="3" size="3" value="0" pattern = "[0-9]+"/>
         </div>
         <div class="col-sm-2">
           <p class="text-center mt-1"> to </p>
         </div>
         <div class="col-sm">
-          <input type="text" class="product-price-high form-control mb-2 price-products-form" name="price-high" maxlength="3" size="3" value="150" />
+          <input type="text" class="product-price-high form-control mb-2 price-products-form" name="price-high" maxlength="3" size="3" value="150" pattern = "[0-9]+"/>
         </div>
       </div>
 
@@ -160,13 +160,13 @@
       <h4 class="mt-2">Max Height</h4>
       <div class="row">
         <div class="col-sm">
-          <input type="text" class="product-height-low form-control mb-2 price-products-form" Name="height-low" maxlength="3" size="3" value="0" />
+          <input type="text" class="product-height-low form-control mb-2 price-products-form" Name="height-low" maxlength="3" size="3" value="0" pattern = "[0-9]+"/>
         </div>
         <div class="col-sm-2">
           <p class="text-center mt-1"> to </p>
         </div>
         <div class="col-sm">
-          <input type="text" class="product-height-high form-control mb-2 price-products-form" Name="height-high" maxlength="3" size="3" value="150" />
+          <input type="text" class="product-height-high form-control mb-2 price-products-form" Name="height-high" maxlength="3" size="3" value="150" pattern = "[0-9]+"/>
         </div>
       </div>
 
