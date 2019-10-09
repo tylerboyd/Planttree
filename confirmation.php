@@ -154,7 +154,7 @@
     <?php
       include("footer.php");
     ?>
-        <div class="mt-5"> <!-- padding --> </div>
+        
     <!-- Footer ends -->
 
 
