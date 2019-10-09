@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <title>checkout</title>
 
   <!--Bootstrap CDN-->
@@ -48,7 +47,6 @@
 			<div id="cart-header" style="p-10;">
     <h5 id="head-text" style="text-align: center;"> &nbsp; <br>Your Cart<br> </h5>
     </div>
-
             <table class="table table-sm table-hover" align="center">
               <thead class="thead-dark">
                 <tr>
@@ -113,7 +111,6 @@
 		<?php
 		}
 		?>
-
         <form class="card p-2">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Promo code">
@@ -150,7 +147,6 @@
               Please enter a valid email address for shipping updates.
             </div>
           </div>
-
           <div class="mb-3">
             <label for="address">Address</label>
             <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
@@ -158,12 +154,10 @@
               Please enter your shipping address.
             </div>
           </div>
-
           <div class="mb-3">
             <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
             <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
           </div>
-
           <div class="row">
             <div class="col-md-5 mb-3">
               <label for="country">Country</label>
@@ -261,6 +255,14 @@
         </form>
       </div>
     </div>
+    
+    <!-- Footer starts here -->
+    <?php
+      include("footer.php");
+    ?>
+        <div class="mt-5"> <!-- padding --> </div>
+    <!-- Footer ends -->
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
