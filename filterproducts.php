@@ -171,10 +171,9 @@
   $higher_price = $_POST["price-high"];
   $brand = $_POST["brand"];
 
-  $product_array = $db_handle->runQuery("SELECT * FROM gardenproducts WHERE  (Price  BETWEEN '$lower_price' AND '$higher_price')
-                                                            OR '$category' IS NULL OR Category = '$category'
-                                                            OR Brand = '$brand' OR '$brand' IS NULL");
-
+  $product_array = $db_handle->runQuery("SELECT * FROM gardenproducts WHERE '$category' IS NULL OR Category = '$category'
+                                                            OR Brand = '$brand' OR '$brand' IS NULL
+                                                            AND (Price BETWEEN '$lower_price' AND '$higher_price')");
   /*$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Category = 'Gum Tree'
                                               	AND (Price BETWEEN 0 AND 100)
                                                 AND Soil_Drain = 'Medium'

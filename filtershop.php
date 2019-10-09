@@ -234,12 +234,12 @@
   $higher_height = $_POST["height-high"];
   $growth = $_POST["growth"];
 
-  $product_array = $db_handle->runQuery("SELECT * FROM tree WHERE (Price BETWEEN '$lower_price' AND '$higher_price')
-                                                            AND (Max_Height BETWEEN '$lower_height' AND '$higher_height')
-                                                            OR '$category' IS NULL OR Category = '$category'
+  $product_array = $db_handle->runQuery("SELECT * FROM tree WHERE '$category' IS NULL OR Category = '$category'
+                                                            AND (Price BETWEEN '$lower_price' AND '$higher_price')
                                                             OR Soil_Drain = '$drainage' OR '$drainage' IS NULL
                                                             OR Sun_Requirement = '$sun' OR '$sun' IS NULL
                                                             OR Maintenance = '$maintenance' OR '$maintenance' IS NULL
+                                                            AND (Max_Height BETWEEN '$lower_height' AND '$higher_height')
                                                             OR Growth_Rate = '$growth' OR '$growth' IS NULL");
   /*$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Category = 'Gum Tree'
                                               	AND (Price BETWEEN 0 AND 100)
