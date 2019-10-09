@@ -24,7 +24,7 @@
         <a class="nav-link" href="products.php">Help</a>
       </li>
     </ul>
-    <form action="searchshop.php" method="GET" class="form-inline my-2 my-lg-0">
+    <form action="searchshop.php" method="POST" class="form-inline my-2 my-lg-0">
 		<input class="form-control mr-sm-2" type="search" placeholder="Search for a product" aria-label="Search for a product" name="search">
 		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 	</form>
