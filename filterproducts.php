@@ -80,6 +80,10 @@
             <input type="radio" class="form-check-input" name="category" value='Fertiliser'>
             <label class="form-check-label" for="exampleCheck1">Fertiliser</label>
           </div>
+          <div class="dropdown-item">
+            <input type="radio" class="form-check-input" name="category" value='NULL'>
+            <label class="form-check-label" for="exampleCheck1">None</label>
+          </div>
         </div>
       </div>
 
@@ -133,6 +137,10 @@
             <input type="radio" class="form-check-input" name="brand" value='Garden Galore'>
             <label class="form-check-label" for="exampleCheck1">Garden Galore</label>
           </div>
+          <div class="dropdown-item">
+            <input type="radio" class="form-check-input" name="brand" value='NULL'>
+            <label class="form-check-label" for="exampleCheck1">None</label>
+          </div>
         </div>
       </div>
 
@@ -163,9 +171,10 @@
   $higher_price = $_POST["price-high"];
   $brand = $_POST["brand"];
 
-  $product_array = $db_handle->runQuery("SELECT * FROM gardenproducts WHERE Category = '$category'
-                                                            AND (Price BETWEEN '$lower_price' AND '$higher_price')
-                                                            AND Brand = '$brand'");
+  $product_array = $db_handle->runQuery("SELECT * FROM gardenproducts WHERE  (Price  BETWEEN '$lower_price' AND '$higher_price')
+                                                            OR '$category' IS NULL OR Category = '$category'
+                                                            OR Brand = '$brand' OR '$brand' IS NULL");
+
   /*$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Category = 'Gum Tree'
                                               	AND (Price BETWEEN 0 AND 100)
                                                 AND Soil_Drain = 'Medium'

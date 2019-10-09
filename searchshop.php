@@ -47,154 +47,173 @@
 				<h3 class="mt-2">Filters</h3>
 				<!-- <h4 class="mt-2">Categories</h4> -->
 				<form action="filtershop.php" method="POST">
-				<div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Select Categories
-					</button>
-					<div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
-						<!-- Can probably put a loop here for categories -->
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="category" value='Fruit Tree'>
-							<label class="form-check-label" for="exampleCheck1">Fruit Trees</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="category" value='Hedge'>
-							<label class="form-check-label" for="exampleCheck1">Hedges</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="category" value='Evergreen'>
-							<label class="form-check-label" for="exampleCheck1">Evergreen Trees</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="category" value='NZ Native'>
-							<label class="form-check-label" for="exampleCheck1">NZ Native</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="category" value='Gum Tree' checked="checked">
-							<label class="form-check-label" for="exampleCheck1">Gum Trees</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="category" value='Palm Tree'>
-							<label class="form-check-label" for="exampleCheck1">Palm Trees</label>
-						</div>
-					</div>
-				</div>
+	      <div class="dropdown">
+	        <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Select Categories
+	        </button>
+	        <div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
+	          <!-- Can probably put a loop here for categories -->
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="category" value='Fruit Tree'>
+	            <label class="form-check-label" for="exampleCheck1">Fruit Trees</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="category" value='Hedge'>
+	            <label class="form-check-label" for="exampleCheck1">Hedges</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="category" value='Evergreen'>
+	            <label class="form-check-label" for="exampleCheck1">Evergreen Trees</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="category" value='NZ Native'>
+	            <label class="form-check-label" for="exampleCheck1">NZ Native</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="category" value='Gum Tree'>
+	            <label class="form-check-label" for="exampleCheck1">Gum Trees</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="category" value='Palm Tree'>
+	            <label class="form-check-label" for="exampleCheck1">Palm Trees</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="category" value='NULL' checked="checked">
+	            <label class="form-check-label" for="exampleCheck1">None</label>
+	          </div>
+	        </div>
+	      </div>
 
-				<h4 class="mt-2">Price</h4>
-				<div class="row">
-					<div class="col-sm">
-						<input type="text" class="product-price-low form-control mb-2 price-products-form" name="price-low" maxlength="3" size="3" value="0" pattern = "[0-9]+"/>
-					</div>
-					<div class="col-sm-2">
-						<p class="text-center mt-1"> to </p>
-					</div>
-					<div class="col-sm">
-						<input type="text" class="product-price-high form-control mb-2 price-products-form" name="price-high" maxlength="3" size="3" value="150" pattern = "[0-9]+"/>
-					</div>
-				</div>
+	      <h4 class="mt-2">Price</h4>
+	      <div class="row">
+	        <div class="col-sm">
+	          <input type="text" class="product-price-low form-control mb-2 price-products-form" name="price-low" maxlength="3" size="3" value="0" pattern = "[0-9]+"/>
+	        </div>
+	        <div class="col-sm-2">
+	          <p class="text-center mt-1"> to </p>
+	        </div>
+	        <div class="col-sm">
+	          <input type="text" class="product-price-high form-control mb-2 price-products-form" name="price-high" maxlength="3" size="3" value="150" pattern = "[0-9]+"/>
+	        </div>
+	      </div>
 
-				<!-- <h4 class="mt-2">Soil Drainage</h4> -->
-				<div class="dropdown mt-2 mb-3">
-					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Soil Drainage
-					</button>
-					<div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
-						<!-- Can probably put a loop here for categories -->
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="drainage" value = 'Fast'>
-							<label class="form-check-label" for="exampleCheck1">Fast</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="drainage" value = 'Medium' checked="checked">
-							<label class="form-check-label" for="exampleCheck1">Medium</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="drainage" value = 'Slow'>
-							<label class="form-check-label" for="exampleCheck1">Slow</label>
-						</div>
-					</div>
-				</div>
-				<!-- <h4 class="mt-2">Sun Requirement</h4> -->
-				<div class="dropdown mt-3 mb-3">
-					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Sun Requirement
-					</button>
-					<div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
-						<!-- Can probably put a loop here for categories -->
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="sun" value = 'Full Sun'>
-							<label class="form-check-label" for="exampleCheck1">Sunny</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="sun" value = 'Medium Sun'>
-							<label class="form-check-label" for="exampleCheck1">Medium</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="sun" value = 'Shade' checked="checked">
-							<label class="form-check-label" for="exampleCheck1">Shade</label>
-						</div>
-					</div>
-				</div>
-				<!-- <h4 class="mt-2">Maintenance</h4> -->
-				<div class="dropdown mt-3 mb-2">
-					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Maintenance
-					</button>
-					<div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
-						<!-- Can probably put a loop here for categories -->
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="maintenance" value = 'High'>
-							<label class="form-check-label" for="exampleCheck1">High</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="maintenance" value = 'Medium'>
-							<label class="form-check-label" for="exampleCheck1">Medium</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="maintenance" value = 'Low' checked="checked">
-							<label class="form-check-label" for="exampleCheck1">Low</label>
-						</div>
-					</div>
-				</div>
+	      <!-- <h4 class="mt-2">Soil Drainage</h4> -->
+	      <div class="dropdown mt-2 mb-3">
+	        <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Soil Drainage
+	        </button>
+	        <div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
+	          <!-- Can probably put a loop here for categories -->
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="drainage" value = 'Fast'>
+	            <label class="form-check-label" for="exampleCheck1">Fast</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="drainage" value = 'Medium'>
+	            <label class="form-check-label" for="exampleCheck1">Medium</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="drainage" value = 'Slow'>
+	            <label class="form-check-label" for="exampleCheck1">Slow</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="drainage" value='NULL' checked="checked">
+	            <label class="form-check-label" for="exampleCheck1">None</label>
+	          </div>
+	        </div>
+	      </div>
+	      <!-- <h4 class="mt-2">Sun Requirement</h4> -->
+	      <div class="dropdown mt-3 mb-3">
+	        <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Sun Requirement
+	        </button>
+	        <div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
+	          <!-- Can probably put a loop here for categories -->
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="sun" value = 'Full Sun'>
+	            <label class="form-check-label" for="exampleCheck1">Sunny</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="sun" value = 'Medium Sun'>
+	            <label class="form-check-label" for="exampleCheck1">Medium</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="sun" value = 'Shade'>
+	            <label class="form-check-label" for="exampleCheck1">Shade</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="sun" value='NULL' checked="checked">
+	            <label class="form-check-label" for="exampleCheck1">None</label>
+	          </div>
+	        </div>
+	      </div>
+	      <!-- <h4 class="mt-2">Maintenance</h4> -->
+	      <div class="dropdown mt-3 mb-2">
+	        <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Maintenance
+	        </button>
+	        <div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
+	          <!-- Can probably put a loop here for categories -->
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="maintenance" value = 'High'>
+	            <label class="form-check-label" for="exampleCheck1">High</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="maintenance" value = 'Medium'>
+	            <label class="form-check-label" for="exampleCheck1">Medium</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="maintenance" value = 'Low'>
+	            <label class="form-check-label" for="exampleCheck1">Low</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="maintenance" value='NULL' checked="checked">
+	            <label class="form-check-label" for="exampleCheck1">None</label>
+	          </div>
+	        </div>
+	      </div>
 
-				<h4 class="mt-2">Max Height</h4>
-				<div class="row">
-					<div class="col-sm">
-						<input type="text" class="product-height-low form-control mb-2 price-products-form" Name="height-low" maxlength="3" size="3" value="0" pattern = "[0-9]+"/>
-					</div>
-					<div class="col-sm-2">
-						<p class="text-center mt-1"> to </p>
-					</div>
-					<div class="col-sm">
-						<input type="text" class="product-height-high form-control mb-2 price-products-form" Name="height-high" maxlength="3" size="3" value="150" pattern = "[0-9]+"/>
-					</div>
-				</div>
+	      <h4 class="mt-2">Max Height</h4>
+	      <div class="row">
+	        <div class="col-sm">
+	          <input type="text" class="product-height-low form-control mb-2 price-products-form" Name="height-low" maxlength="3" size="3" value="0" pattern = "[0-9]+"/>
+	        </div>
+	        <div class="col-sm-2">
+	          <p class="text-center mt-1"> to </p>
+	        </div>
+	        <div class="col-sm">
+	          <input type="text" class="product-height-high form-control mb-2 price-products-form" Name="height-high" maxlength="3" size="3" value="150" pattern = "[0-9]+"/>
+	        </div>
+	      </div>
 
-				<!-- <h4 class="mt-2">Growth Rate</h4> -->
-				<div class="dropdown mt-2 mb-2">
-					<button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Growth Rate
-					</button>
-					<div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
-						<!-- Can probably put a loop here for categories -->
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="growth" value='Fast' checked="checked">
-							<label class="form-check-label" for="exampleCheck1">Fast</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="growth" value='Medium'>
-							<label class="form-check-label" for="exampleCheck1">Medium</label>
-						</div>
-						<div class="dropdown-item">
-							<input type="radio" class="form-check-input" name="growth" value='Slow'>
-							<label class="form-check-label" for="exampleCheck1">Slow</label>
-						</div>
-					</div>
-				</div>
-				<input type="submit" value="Apply Filter" class="btnAddAction mt-3 mb-3 btn btn-primary btn-block" name"btnfilter"/>
-			</div>
-		</form>
-
+	      <!-- <h4 class="mt-2">Growth Rate</h4> -->
+	      <div class="dropdown mt-2 mb-2">
+	        <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Growth Rate
+	        </button>
+	        <div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
+	          <!-- Can probably put a loop here for categories -->
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="growth" value='Fast'>
+	            <label class="form-check-label" for="exampleCheck1">Fast</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="growth" value='Medium'>
+	            <label class="form-check-label" for="exampleCheck1">Medium</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="growth" value='Slow'>
+	            <label class="form-check-label" for="exampleCheck1">Slow</label>
+	          </div>
+	          <div class="dropdown-item">
+	            <input type="radio" class="form-check-input" name="growth" value='NULL' checked="checked">
+	            <label class="form-check-label" for="exampleCheck1">None</label>
+	          </div>
+	        </div>
+	      </div>
+	      <input type="submit" value="Apply Filter" class="btnAddAction mt-3 mb-3 btn btn-primary btn-block" name"btnfilter"/>
+	    </div>
+	  </form>
 
 
 

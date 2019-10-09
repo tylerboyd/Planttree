@@ -70,12 +70,16 @@
             <label class="form-check-label" for="exampleCheck1">NZ Native</label>
           </div>
           <div class="dropdown-item">
-            <input type="radio" class="form-check-input" name="category" value='Gum Tree' checked="checked">
+            <input type="radio" class="form-check-input" name="category" value='Gum Tree'>
             <label class="form-check-label" for="exampleCheck1">Gum Trees</label>
           </div>
           <div class="dropdown-item">
             <input type="radio" class="form-check-input" name="category" value='Palm Tree'>
             <label class="form-check-label" for="exampleCheck1">Palm Trees</label>
+          </div>
+          <div class="dropdown-item">
+            <input type="radio" class="form-check-input" name="category" value='NULL' checked="checked">
+            <label class="form-check-label" for="exampleCheck1">None</label>
           </div>
         </div>
       </div>
@@ -105,12 +109,16 @@
             <label class="form-check-label" for="exampleCheck1">Fast</label>
           </div>
           <div class="dropdown-item">
-            <input type="radio" class="form-check-input" name="drainage" value = 'Medium' checked="checked">
+            <input type="radio" class="form-check-input" name="drainage" value = 'Medium'>
             <label class="form-check-label" for="exampleCheck1">Medium</label>
           </div>
           <div class="dropdown-item">
             <input type="radio" class="form-check-input" name="drainage" value = 'Slow'>
             <label class="form-check-label" for="exampleCheck1">Slow</label>
+          </div>
+          <div class="dropdown-item">
+            <input type="radio" class="form-check-input" name="drainage" value='NULL' checked="checked">
+            <label class="form-check-label" for="exampleCheck1">None</label>
           </div>
         </div>
       </div>
@@ -130,8 +138,12 @@
             <label class="form-check-label" for="exampleCheck1">Medium</label>
           </div>
           <div class="dropdown-item">
-            <input type="radio" class="form-check-input" name="sun" value = 'Shade' checked="checked">
+            <input type="radio" class="form-check-input" name="sun" value = 'Shade'>
             <label class="form-check-label" for="exampleCheck1">Shade</label>
+          </div>
+          <div class="dropdown-item">
+            <input type="radio" class="form-check-input" name="sun" value='NULL' checked="checked">
+            <label class="form-check-label" for="exampleCheck1">None</label>
           </div>
         </div>
       </div>
@@ -151,8 +163,12 @@
             <label class="form-check-label" for="exampleCheck1">Medium</label>
           </div>
           <div class="dropdown-item">
-            <input type="radio" class="form-check-input" name="maintenance" value = 'Low' checked="checked">
+            <input type="radio" class="form-check-input" name="maintenance" value = 'Low'>
             <label class="form-check-label" for="exampleCheck1">Low</label>
+          </div>
+          <div class="dropdown-item">
+            <input type="radio" class="form-check-input" name="maintenance" value='NULL' checked="checked">
+            <label class="form-check-label" for="exampleCheck1">None</label>
           </div>
         </div>
       </div>
@@ -178,7 +194,7 @@
         <div class="dropdown-menu btn-block" aria-labelledby="dropdownMenuButton">
           <!-- Can probably put a loop here for categories -->
           <div class="dropdown-item">
-            <input type="radio" class="form-check-input" name="growth" value='Fast' checked="checked">
+            <input type="radio" class="form-check-input" name="growth" value='Fast'>
             <label class="form-check-label" for="exampleCheck1">Fast</label>
           </div>
           <div class="dropdown-item">
@@ -188,6 +204,10 @@
           <div class="dropdown-item">
             <input type="radio" class="form-check-input" name="growth" value='Slow'>
             <label class="form-check-label" for="exampleCheck1">Slow</label>
+          </div>
+          <div class="dropdown-item">
+            <input type="radio" class="form-check-input" name="growth" value='NULL' checked="checked">
+            <label class="form-check-label" for="exampleCheck1">None</label>
           </div>
         </div>
       </div>
@@ -214,13 +234,13 @@
   $higher_height = $_POST["height-high"];
   $growth = $_POST["growth"];
 
-  $product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Category = '$category'
-                                                            AND (Price BETWEEN '$lower_price' AND '$higher_price')
-                                                            AND Soil_Drain = '$drainage'
-                                                            AND Sun_Requirement = '$sun'
-                                                            AND Maintenance = '$maintenance'
+  $product_array = $db_handle->runQuery("SELECT * FROM tree WHERE (Price BETWEEN '$lower_price' AND '$higher_price')
                                                             AND (Max_Height BETWEEN '$lower_height' AND '$higher_height')
-                                                            AND Growth_Rate = '$growth'");
+                                                            OR '$category' IS NULL OR Category = '$category'
+                                                            OR Soil_Drain = '$drainage' OR '$drainage' IS NULL
+                                                            OR Sun_Requirement = '$sun' OR '$sun' IS NULL
+                                                            OR Maintenance = '$maintenance' OR '$maintenance' IS NULL
+                                                            OR Growth_Rate = '$growth' OR '$growth' IS NULL");
   /*$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Category = 'Gum Tree'
                                               	AND (Price BETWEEN 0 AND 100)
                                                 AND Soil_Drain = 'Medium'
