@@ -204,6 +204,7 @@
 		require_once("dbcontroller.php");
 		$db_handle = new DBController();
 		$search = $_GET["search"];
+		$garden_product_array = $db_handle->runQuery("SELECT * FROM gardenproducts WHERE Name LIKE '%$search%'");
 		$product_array = $db_handle->runQuery("SELECT * FROM tree WHERE Name LIKE '%$search%'");
 		if (!empty($product_array)) {
 			foreach ($product_array as $key => $value) {
@@ -247,9 +248,49 @@
 		<?php
 			}
 		}
+		if (!empty($garden_product_array)) {
+			foreach ($garden_product_array as $key => $value) {
+				?>
+
+				<div class="row-4 mt-3 border bg-light text-center">
+
+					<form method="post" action="garden-products.php?action=add&Code=<?php echo $garden_product_array[$key]["Code"]; ?>">
+
+						<div class="row">
+
+							<div class="col-lg-3 mt-1 ml-1 mr-1 mb-1">
+								<img class="img-thumbnail products-thumb" src="images/<?php echo $garden_product_array[$key]["Image"]; ?> " />
+							</div>
+
+							<div class="col-lg mt-2 text-left scale-text-center">
+								<h3>
+									<form action="garden-products.php?action=item&Code=<?php echo $garden_product_array[$key]["Code"]; ?>">
+										<input type="hidden" name="hidden_code" value=<?php echo $garden_product_array[$key]["Code"]; ?> />
+										<a class="product-title" href="garden-item.php?action=item&Code=<?php echo $garden_product_array[$key]["Code"]; ?>"><?php echo $garden_product_array	[$key]["Name"]; ?></a>
+									</form>
+								</h3>
+							</div>
+
+							<div class="col-lg text-right mr-3 scale-price-center">
+								<h3>
+									<div class="product-Price"><?php echo "$" . $garden_product_array[$key]["Price"]; ?><br></div>
+								</h3>
+								<div class="cart-action form-inline justify-content-center mt-3 scale-float-center">
+									<input type="text" class="product-quantity form-control mr-1 ml-1 prod-qty-maxwidth btn-lg" Name="quantity" maxlength="2" size="2" value="1" pattern="[0-99]" />
+									<input type="submit" value="Add to Cart" class="btnAddAction btn btn-lg btn-primary mr-1 ml-1" />
+								</div>
+							</div>
+
+						</div>
+
+					</form>
+
+				</div>
+
+		<?php
+			}
+		}
 		?>
-
-
 	</div>
 </div>
 

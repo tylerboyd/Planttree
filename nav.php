@@ -12,7 +12,7 @@
         <a class="nav-link" href="products.php">Trees</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="products.php">Related Products</a>
+        <a class="nav-link" href="garden-products.php">Related Products</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="products.php">Contact Us</a>
@@ -33,9 +33,9 @@
       <li class="nav-item">
         <a href="cart.php"><i class="fas fa-shopping-cart fa-2x"></i> <span class="sr-only">(current)</span></a>
       </li>
-        
+
       </ul>
       </div>
   </div>
-  
-</nav>    
+
+</nav>

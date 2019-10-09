@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-   
   <title>checkout</title>
 
   <!--Bootstrap CDN-->
@@ -37,8 +36,8 @@
     <div class="row py-3 px-4">
     <div class="container-fluid" id="cart-holder">
 	<div class="table-responsive" id="shopping-cart">
-        
-        
+
+
 		<?php
 		session_start();
 		if (isset($_SESSION["cart_item"])) {
@@ -48,7 +47,6 @@
 			<div id="cart-header" style="p-10;">
     <h5 id="head-text" style="text-align: center;"> &nbsp; <br>Your Cart<br> </h5>
     </div>
-	
             <table class="table table-sm table-hover" align="center">
               <thead class="thead-dark">
                 <tr>
@@ -67,17 +65,17 @@
 						<tr>
 							<td style="text-align:center;"><a href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $item["Name"]; ?>
 							</a></td>
-                           
+
                             <td style="text-align:center;"><a href="item.php?action=item&Code=<?php echo $item["Code"]; ?>"><?php echo $item["Code"]; ?></a></td>
-                            
+
                             <td style="text-align:center;"><a href="item.php?action=item&Code=<?php echo $item["Code"]; ?>"><?php echo $item["quantity"]; ?></a></td>
-                            
+
                             <td style="text-align:center;"><a href="item.php?action=item&Code=<?php echo $item["Code"]; ?>"><?php echo "$ " . $item["Price"]; ?></a></td>
-                            
+
                             <td style="text-align:center;"><a href="item.php?action=item&Code=<?php echo $item["Code"]; ?>"><?php echo "$ " . number_format($item_Price, 2); ?></a></td>
 							<td style="text-align:center;"><a href="products.php?action=remove&Code=<?php echo $item["Code"]; ?>" class="btnRemoveAction"><i class="fas fa-times" alt="Remove Item"></i></a></td>
 						</tr>
-		    						
+
 					<?php
 							$total_quantity += $item["quantity"];
 							$total_Price += ($item["Price"] * $item["quantity"]);
@@ -90,30 +88,29 @@
 						<td style="text-align:center;"><strong><?php echo "$ " . number_format($total_Price, 2); ?></strong></td>
 						<td></td>
 					</tr>
-				
+
 			</table>
-			</div>	
 			</div>
-			
+			</div>
+
 			<div id="container">
 			</div>
-			
+
 		<?php
 		} else {
 			?>
 			<div class="container" id="no-records">
-			
+
 			<div class="no-records-content height: 10%">
-			<h5 id="head-text" style=" text-align: Center;"> <br><br>Your Cart is Empty! <br> <br><b>(ノಠ益ಠ)ノ彡┻━┻</b></h5> 
-			
-			
+			<h5 id="head-text" style=" text-align: Center;"> <br><br>Your Cart is Empty! <br> <br><b>(ノಠ益ಠ)ノ彡┻━┻</b></h5>
+
+
 			</div>
-			
+
 			</div>
 		<?php
 		}
 		?>
-  
         <form class="card p-2">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Promo code">
@@ -142,28 +139,14 @@
               </div>
             </div>
           </div>
-  
+
           <div class="mb-3">
-            <label for="username">Username</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">@</span>
-              </div>
-              <input type="text" class="form-control" id="username" placeholder="Username" required="">
-              <div class="invalid-feedback" style="width: 100%;">
-                Your username is required.
-              </div>
-            </div>
-          </div>
-  
-          <div class="mb-3">
-            <label for="email">Email <span class="text-muted">(Optional)</span></label>
+            <label for="email">Email <span class="text-muted"></span></label>
             <input type="email" class="form-control" id="email" placeholder="you@example.com">
             <div class="invalid-feedback">
               Please enter a valid email address for shipping updates.
             </div>
           </div>
-  
           <div class="mb-3">
             <label for="address">Address</label>
             <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
@@ -171,12 +154,10 @@
               Please enter your shipping address.
             </div>
           </div>
-  
           <div class="mb-3">
             <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
             <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
           </div>
-  
           <div class="row">
             <div class="col-md-5 mb-3">
               <label for="country">Country</label>
@@ -218,14 +199,10 @@
             <input type="checkbox" class="custom-control-input" id="same-address">
             <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
           </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="save-info">
-            <label class="custom-control-label" for="save-info">Save this information for next time</label>
-          </div>
           <hr class="mb-4">
-  
+
           <h4 class="mb-3">Payment</h4>
-  
+
           <div class="d-block my-3">
             <div class="custom-control custom-radio">
               <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
@@ -274,10 +251,18 @@
             </div>
           </div>
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Place Order</button>
         </form>
       </div>
     </div>
+    
+    <!-- Footer starts here -->
+    <?php
+      include("footer.php");
+    ?>
+        <div class="mt-5"> <!-- padding --> </div>
+    <!-- Footer ends -->
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
