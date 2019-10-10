@@ -112,14 +112,34 @@
 		<?php
 		}
 		?>
-        <form class="card p-2">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Promo code">
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-secondary">Redeem</button>
-            </div>
-          </div>
-        </form>
+        
+        <form>
+  <div class="form-group row">
+    <label for="staticName" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticName" value=firstName+lastName>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=email>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="staticAddress" class="col-sm-2 col-form-label">Address</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticAddress" value=address+address2+country+City+Postcode>
+    </div>
+  </div>
+
+  
+
+</form>
+
+
       </div>
 
       <div class="custom-control custom-radio">
@@ -136,16 +156,8 @@
     <option value="2">Deliver to Wellington (+$20)</option>
     <option value="3">Deliver to Christchurch (+$30)</option>
   </select>
-</div>
 
-
-<div class="custom-control custom-radio">
-              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-              <label class="custom-control-label" for="credit">Pickup from branch</label>
-            </div>
-      <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <label class="input-group-text" for="inputGroupSelect01">Pickup location</label>
+  <label class="input-group-text" for="inputGroupSelect01">Pickup location</label>
   </div>
   <select class="custom-select" id="inputGroupSelect01">
     <option selected>Choose...</option>
@@ -154,7 +166,6 @@
     <option value="3">Pickup from branch3</option>
   </select>
 </div>
-
 
 <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm Order</button>
     
