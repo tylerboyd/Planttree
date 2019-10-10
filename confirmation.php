@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>confirmation</title>
+  <title>Confirmation</title>
 
   <!--Bootstrap CDN-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -32,8 +32,8 @@
   <?php include("banner.php"); ?>
   <?php include("nav.php"); ?>
 
-  <div class="container">
-    <h3 class="h3">Confirming order</h3>
+  <div class="container mt-5">
+    <h3 class="h3">Confirming order (ORDERID?)</h3>
 
     <div class="row py-3 px-4">
       <div class="container-fluid" id="cart-holder">
@@ -42,8 +42,6 @@
 
           <?php
           session_start();
-
-          echo $_POST["fName"];
 
           if (isset($_SESSION["cart_item"])) {
             $total_quantity = 0;
@@ -113,38 +111,68 @@
     }
     ?>
 
-    <form>
-      <div class="form-group row">
-        <label for="staticName" class="col-sm-2 col-form-label">Name</label>
-        <div class="col-sm-10">
-          <p> <?php echo $_POST["fName"];
-              echo " ";
-              echo $_POST["lName"]; ?></p>
-        </div>
-      </div>
 
-      <div class="form-group row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-          <p> <?php echo $_POST["email"]; ?></p>
-        </div>
-      </div>
+    <div class="w-100">
+      <div class="row">
+        <div class="col-md">
 
-      <div class="form-group row">
-        <label for="staticAddress" class="col-sm-2 col-form-label">Address</label>
-        <div class="col-sm-10">
-          <p> <?php echo $_POST["address"];
-              echo ", ";
-              echo $_POST["address2"];
-              echo ", ";
-              echo $_POST["city"];
-              echo ", ";
-              echo $_POST["country"];
-              echo ", ";
-              echo $_POST["postcode"];   ?></p>
+          <h4>Shipping Details</h4>
+          <form>
+            <div class="form-group row mt-3">
+              <!-- <label for="staticName" class="col-sm-2 col-form-label bg-light">Name</label> -->
+              <div class="col-md">
+                <div class="border">
+                  <p class="mt-3 mb-3 ml-3 mr-3">
+                    <?php echo $_POST["fName"] . " " . $_POST["lName"]; ?> <br>
+                    <?php echo $_POST["address"] . ", <br>";
+                    echo $_POST["address2"] . ", <br>";
+                    echo $_POST["city"] . ", ";
+                    echo $_POST["country"] . ", <br>";
+                    echo $_POST["postcode"];   ?>
+
+                    <?php //echo $_POST["email"]; 
+                    ?>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
+        <div class="col-md">
+          <h4>Payment</h4>
+
+          <form>
+            <div class="form-group row mt-3">
+              <!-- <label for="staticName" class="col-sm-2 col-form-label bg-light">Name</label> -->
+              <div class="col-md">
+                <div class="border">
+                  <p class="mt-3 mb-3 ml-3 mr-3">
+
+                    Some card details can go here too?<br><br>
+
+                    <b>Billing Address</b><br>
+                    <?php echo $_POST["fName"] . " " . $_POST["lName"]; ?> <br>
+                    <?php echo $_POST["address"] . ", <br>";
+                    echo $_POST["address2"] . ", <br>";
+                    echo $_POST["city"] . ", ";
+                    echo $_POST["country"] . ", <br>";
+                    echo $_POST["postcode"];   ?>
+
+                    <?php //echo $_POST["email"]; 
+                    ?>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="w-100"></div>
+        <div class="col">Column</div>
+        <div class="col">Column</div> -->
       </div>
-    </form>
+    </div>
+
+
     </div>
 
     <div class="custom-control custom-radio">
@@ -176,7 +204,10 @@
       </select>
     </div>
 
-    <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm Order</button>
+    <div class="buttonContainer text-center">
+      <button class="btn btn-primary btn-lg mr-2" type="submit">Confirm Order</button>
+      <button class="btn btn-secondary btn-lg" type="submit">Cancel Order</button>
+    </div>
   </div>
 
 
