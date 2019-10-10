@@ -26,6 +26,71 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <style type ="text/css">
+      
+      #slider-holder{
+          margin: auto;
+          background-color: darkgreen;
+          max-width: 100vh; 
+          
+      }
+      #slider{
+          
+          overflow: hidden;
+          background-color: darkgreen;
+          
+      }
+      
+      #slider figure img {
+          width: 20%;
+          float: left;
+          max-width: 100%;
+      }
+      
+      #slider figure{
+          position: relative;
+          width: 500%;
+          margin: 0;
+          left: 0;
+          animation: 20s slider infinite;
+      }
+      
+      
+      
+      @keyframes slider{
+          0%{
+              left 0;
+          }
+          20%{
+              left: 0;
+          }
+          25%{
+              left: -100%;
+          }
+          45%{
+              left: -100%;
+          }
+          50%{
+             left: -200%; 
+          }
+          70%{
+              left: -200%
+          }
+          75%{
+              left: -300%;
+          }
+          95%
+          {
+              left: -300%;
+          }
+          100%
+          {
+              left: -400%
+          }
+      }
+      
+      </style>
 
 </head>
 
@@ -45,32 +110,31 @@
 
   <!--Main Section-->
   <main>
+   <div id="slider-bg" style="background-image: radial-gradient(#45ff4d, #166125, #000000);"
+}>
+    <div id="slider-holder">
 
-    <!--First Slider-->
-    <div class="container-fluid p-0">
-      <div class="site-slider">
-        <div class="slider-one">
-          <div>
-            <img ban1 src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 1">
-          </div>
-          <div>
-            <img ban1 src="Assets/Carousel Images/Banner Sample 2.PNG" class="img-fluid" alt="Banner 2" />
-          </div>
-          <div>
-            <img ban1 src="Assets/Carousel Images/Banner Sample1.PNG" class="img-fluid" alt="Banner 3" />
-          </div>
-        </div>
-        <div class="slider-btn">
-          <span class="previous position-top"><i class="fas fa-chevron-left"></i></span>
+       <div id="slider">
+           <figure>
+               <img ban1 src="Assets/Carousel Images/Bannerquote1.png" class="img-fluid" alt="Banner 1">
 
-          <span class="next position-top right-0"><i class="fas fa-chevron-right"></i></span>
+               <a href="garden-item.php?action=item&Code=wsnT5"><img ban1 src="Assets/Carousel%20Images/ProductBanner1.png" class="img-fluid" alt="Banner 2" /></a>
 
-        </div>
-      </div>
+               <img ban1 src="Assets/Carousel%20Images/Bannerquote2.png" class="img-fluid" alt="Banner 3" />
+
+               <a href="garden-item.php?action=item&Code=aHMcd"><img ban1 src="Assets/Carousel%20Images/ProductBanner2.png" class="img-fluid" alt="Banner 4" /></a>
+
+               <img ban1 src="Assets/Carousel Images/Bannerquote1.png" class="img-fluid" alt="Banner 1">
+           </figure>
+       </div>
+    </div>
     </div>
 
+    
 
-  </main>
+  </main> 
+  
+      
   <!--/Main Section-->
   <div>
     <div class="card" style="width: 65%; float: left">
