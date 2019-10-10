@@ -63,6 +63,7 @@
                   <th scope="col" style="text-align:center;"></th>
                 </tr>
               </thead>
+
               <?php
                 foreach ($_SESSION["cart_item"] as $item) {
                   $item_Price = $item["quantity"] * $item["Price"];
@@ -101,6 +102,7 @@
     <?php
     } else {
       ?>
+
       <div class="container" id="no-records">
 
         <div class="no-records-content height: 10%">
@@ -163,7 +165,9 @@
     </div>
 
     <div class="input-group mb-3">
-      <label class="input-group-text" for="inputGroupSelect01">Pickup location</label>
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Pickup location</label>
+      </div>
       <select class="custom-select" id="inputGroupSelect01">
         <option selected>Choose...</option>
         <option value="1">Pickup from branch1</option>
@@ -171,11 +175,11 @@
         <option value="3">Pickup from branch3</option>
       </select>
     </div>
-    
+
     <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm Order</button>
   </div>
 
-  
+
   <!-- Footer starts here -->
   <?php
   include("footer.php");
