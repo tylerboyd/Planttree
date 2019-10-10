@@ -41,6 +41,9 @@
 
 		<?php
 		session_start();
+
+    echo $_POST["fName"];
+
 		if (isset($_SESSION["cart_item"])) {
 			$total_quantity = 0;
 			$total_Price = 0;
@@ -112,30 +115,30 @@
 		<?php
 		}
 		?>
-        
+
         <form>
   <div class="form-group row">
     <label for="staticName" class="col-sm-2 col-form-label">Name</label>
     <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticName" value=firstName+lastName>
+      <p> <?php echo $_POST["fName"]; echo " "; echo $_POST["lName"]; ?></p>
     </div>
   </div>
 
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=email>
+      <p> <?php echo $_POST["email"];?></p>
     </div>
   </div>
 
   <div class="form-group row">
     <label for="staticAddress" class="col-sm-2 col-form-label">Address</label>
     <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticAddress" value=address+address2+country+City+Postcode>
+      <p> <?php echo $_POST["address"]; echo ", "; echo $_POST["address2"]; echo ", "; echo $_POST["city"]; echo ", "; echo $_POST["country"]; echo ", "; echo $_POST["postcode"];   ?></p>
     </div>
   </div>
 
-  
+
 
 </form>
 
@@ -168,7 +171,7 @@
 </div>
 
 <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm Order</button>
-    
+
     <!-- Footer starts here -->
     <?php
       include("footer.php");

@@ -122,18 +122,18 @@
       </div>
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Billing address</h4>
-        <form class="needs-validation" novalidate="">
+        <form class="needs-validation" action="confirmation.php" method="post">
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+              <input type="text" class="form-control" id="firstName" name="fName" placeholder="" value="" required="">
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="lastName">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+              <input type="text" class="form-control" id="lastName" name="lName" placeholder="" value="" required="">
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -142,26 +142,26 @@
 
           <div class="mb-3">
             <label for="email">Email <span class="text-muted"></span></label>
-            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
             <div class="invalid-feedback">
               Please enter a valid email address for shipping updates.
             </div>
           </div>
           <div class="mb-3">
             <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+            <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required="">
             <div class="invalid-feedback">
               Please enter your shipping address.
             </div>
           </div>
           <div class="mb-3">
             <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+            <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment or suite">
           </div>
           <div class="row">
             <div class="col-md-5 mb-3">
               <label for="country">Country</label>
-              <select class="custom-select d-block w-100" id="country" required="">
+              <select class="custom-select d-block w-100" id="country" name="country" required="">
                 <option value="">Choose...</option>
                 <option>New Zealand</option>
               </select>
@@ -171,7 +171,7 @@
             </div>
             <div class="col-md-4 mb-3">
               <label for="City">City</label>
-              <select class="custom-select d-block w-100" id="state" required="">
+              <select class="custom-select d-block w-100" id="state" name="city" required="">
                 <option value="">Choose...</option>
                 <option>Auckland</option>
                 <option>Wellington</option>
@@ -188,7 +188,7 @@
             </div>
             <div class="col-md-3 mb-3">
               <label for="Postcode">Postcode</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required="">
+              <input type="text" class="form-control" id="zip" name="postcode" placeholder="" required="">
               <div class="invalid-feedback">
                 Postcode required.
               </div>
@@ -244,18 +244,20 @@
             </div>
             <div class="col-md-3 mb-3">
               <label for="cc-cvv">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
               <div class="invalid-feedback">
                 Security code required
               </div>
             </div>
           </div>
           <hr class="mb-4">
+          <a href="confirmation.php">
           <button class="btn btn-primary btn-lg btn-block" type="submit">Place Order</button>
-        </form>
+        </a>
+
       </div>
     </div>
-    
+</form>
     <!-- Footer starts here -->
     <?php
       include("footer.php");
