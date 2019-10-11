@@ -1,3 +1,25 @@
+<?php
+session_start();
+require_once("dbcontroller.php");
+$db_handle = new DBController();
+if (!empty($_GET["action"])) {
+	switch ($_GET["action"]) {
+		case "remove":
+			if (!empty($_SESSION["cart_item"])) {
+				foreach ($_SESSION["cart_item"] as $k => $v) {
+					if ($_GET["Code"] == $k)
+						unset($_SESSION["cart_item"][$k]);
+					if (empty($_SESSION["cart_item"]))
+						unset($_SESSION["cart_item"]);
+				}
+			}
+			break;
+		case "empty":
+			unset($_SESSION["cart_item"]);
+			break;
+	}
+}
+?>
 <HTML>
 
 <Head>
@@ -37,7 +59,6 @@
         
         
 		<?php
-		session_start();
 		if (isset($_SESSION["cart_item"])) {
 			$total_quantity = 0;
 			$total_Price = 0;
@@ -72,7 +93,7 @@
                             <td style="text-align:center;"><a href="item.php?action=item&Code=<?php echo $item["Code"]; ?>"><?php echo "$ " . $item["Price"]; ?></a></td>
                             
                             <td style="text-align:center;"><a href="item.php?action=item&Code=<?php echo $item["Code"]; ?>"><?php echo "$ " . number_format($item_Price, 2); ?></a></td>
-							<td style="text-align:center;"><a href="products.php?action=remove&Code=<?php echo $item["Code"]; ?>" class="btnRemoveAction"><i class="fas fa-times" alt="Remove Item"></i></a></td>
+							<td style="text-align:center;"><a href="cart.php?action=remove&Code=<?php echo $item["Code"]; ?>" class="btnRemoveAction"><i class="fas fa-times" alt="Remove Item"></i></a></td>
 						</tr>
 		    						
 					<?php
@@ -98,7 +119,7 @@
 			</div>
 			
 			<div class="empty-cart-btn">
-			<a href="products.php?action=empty" class="btn btn-primary btn-block" id="empty">Empty Cart</a>
+			<a href="cart.php?action=empty" class="btn btn-primary btn-block" id="empty">Empty Cart</a>
 			</div>
 			</div>
 			
