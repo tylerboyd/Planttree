@@ -130,36 +130,32 @@
     </div>
     </div>
 
-    
-
   </main> 
   
       
   <!--/Main Section-->
-  <div>
-    <div class="card" style="width: 65%; float: left">
-      <div class="card-body">
-        <h5 class="card-title">About Us</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Who We Are</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Our Products</a>
-        <a href="#" class="card-link">Tree Tips</a>
-      </div>
+  
+<div class="container">
+    <div class="row w-100">
+    <div class="col-md-10 mt-3">
+      <h4>About Us</h4>
+      <h6 class="text-muted">Who We Are</h6>
+      <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Our Products</a>
+      <a href="#" class="card-link">Tree Tips</a>
     </div>
 
-    <div class="card" style="width: 35%; float: left;">
-
-      <div class="card-body">
-        <h5 class="card-title">Our Services</h5>
-        <h6 class="card-subtitle mb-2 text-muted">What We Do</h6>
+    <div class="col-md-2 mt-3">
+    <h4>Our Services</h4>
+        <h6 class="text-muted">What We Do</h6>
         <ul>
           <li> Sell trees</li>
           <li> Sell trees</li>
           <li> Sell trees</li>
         </ul>
-
-      </div>
     </div>
+  </div>
+</div>
 
   </div>
 
