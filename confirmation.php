@@ -119,7 +119,6 @@
           <h4>Shipping Details</h4>
           <form>
             <div class="form-group row mt-3">
-              <!-- <label for="staticName" class="col-sm-2 col-form-label bg-light">Name</label> -->
               <div class="col-md">
                 <div class="border">
                   <p class="mt-3 mb-3 ml-3 mr-3">
@@ -132,9 +131,6 @@
                     echo $_POST["city"] . ", ";
                     echo $_POST["country"] . "<br>";
                     echo $_POST["postcode"];   ?>
-
-                    <?php //echo $_POST["email"]; 
-                    ?>
                   </p>
                 </div>
               </div>
@@ -177,34 +173,7 @@
 
     </div>
 
-    <div class="custom-control custom-radio">
-      <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-      <label class="custom-control-label" for="credit">Deliver to your location</label>
-    </div>
-
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect01">Delivery option</label>
-      </div>
-      <select class="custom-select" id="inputGroupSelect01">
-        <option selected>Choose...</option>
-        <option value="1">Deliver to Auckland (+$10)</option>
-        <option value="2">Deliver to Wellington (+$20)</option>
-        <option value="3">Deliver to Christchurch (+$30)</option>
-      </select>
-    </div>
-
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect01">Pickup location</label>
-      </div>
-      <select class="custom-select" id="inputGroupSelect01">
-        <option selected>Choose...</option>
-        <option value="1">Pickup from branch1</option>
-        <option value="2">Pickup from branch2</option>
-        <option value="3">Pickup from branch3</option>
-      </select>
-    </div>
+    
 
     <div class="buttonContainer text-center">
       <button class="btn btn-primary btn-lg mr-2" type="submit">Confirm Order</button>
