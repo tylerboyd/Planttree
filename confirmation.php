@@ -124,10 +124,13 @@
                 <div class="border">
                   <p class="mt-3 mb-3 ml-3 mr-3">
                     <?php echo $_POST["fName"] . " " . $_POST["lName"]; ?> <br>
-                    <?php echo $_POST["address"] . ", <br>";
-                    echo $_POST["address2"] . ", <br>";
+                    <?php echo $_POST["address"] . "<br>";
+                    if ($_POST["address2"] != null)
+                    {
+                      echo $_POST["address2"] . "<br>";
+                    }
                     echo $_POST["city"] . ", ";
-                    echo $_POST["country"] . ", <br>";
+                    echo $_POST["country"] . "<br>";
                     echo $_POST["postcode"];   ?>
 
                     <?php //echo $_POST["email"]; 
@@ -143,22 +146,24 @@
 
           <form>
             <div class="form-group row mt-3">
-              <!-- <label for="staticName" class="col-sm-2 col-form-label bg-light">Name</label> -->
               <div class="col-md">
                 <div class="border">
                   <p class="mt-3 mb-3 ml-3 mr-3">
 
-                    Some card details can go here too?<br><br>
-
                     <b>Billing Address</b><br>
                     <?php echo $_POST["fName"] . " " . $_POST["lName"]; ?> <br>
-                    <?php echo $_POST["address"] . ", <br>";
-                    echo $_POST["address2"] . ", <br>";
+                    <?php echo $_POST["address"] . "<br>";
+                    if ($_POST["address2"] != null)
+                    {
+                      echo $_POST["address2"] . "<br>";
+                    }
                     echo $_POST["city"] . ", ";
-                    echo $_POST["country"] . ", <br>";
-                    echo $_POST["postcode"];   ?>
+                    echo $_POST["country"] . "<br>";
+                    echo $_POST["postcode"] . "<br><br>"; ?>
 
-                    <?php //echo $_POST["email"]; 
+                    <b>Contact</b><br>
+
+                    <?php echo $_POST["email"]; 
                     ?>
                   </p>
                 </div>
@@ -166,9 +171,6 @@
             </div>
           </form>
         </div>
-        <!-- <div class="w-100"></div>
-        <div class="col">Column</div>
-        <div class="col">Column</div> -->
       </div>
     </div>
 
