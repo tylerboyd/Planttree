@@ -41,7 +41,7 @@
     </div>
 
     <div class="row">
-      <div class="col-7 col-md-7 border">
+      <div class="col-lg-7 border">
         <h4 class="mb-3 mt-3">Billing address</h4>
         <form class="needs-validation" action="confirmation.php" method="post">
           <div class="row">
@@ -171,9 +171,9 @@
               </div>
             </div>
           </div>
-
       </div>
-      <div class="col-5 col-md-5">
+
+      <div class="col-lg">
         <div class="row py-3 px-4">
           <div class="w-100" id="cart-holder">
             <div class="table-responsive" id="shopping-cart">
@@ -189,11 +189,9 @@
                   <thead class="thead-dark">
                     <tr>
                       <th scope="col" style="text-align:center;">Name</th>
-                      <th scope="col" style="text-align:center;">Code</th>
                       <th scope="col" style="text-align:center;">Amount</th>
                       <th scope="col" style="text-align:center;">Unit Price</th>
                       <th scope="col" style="text-align:center;">Price</th>
-                      <th scope="col" style="text-align:center;"></th>
                     </tr>
                   </thead>
                   <?php
@@ -204,14 +202,12 @@
                       <td style="text-align:center;"><a href="item.php?action=item&Code=<?php echo $product_array[$key]["Code"]; ?>"><?php echo $item["Name"]; ?>
                         </a></td>
 
-                      <td style="text-align:center;"><a href="item.php?action=item&Code=<?php echo $item["Code"]; ?>"><?php echo $item["Code"]; ?></a></td>
-
                       <td style="text-align:center;"><a href="item.php?action=item&Code=<?php echo $item["Code"]; ?>"><?php echo $item["quantity"]; ?></a></td>
 
                       <td style="text-align:center;"><a href="item.php?action=item&Code=<?php echo $item["Code"]; ?>"><?php echo "$ " . $item["Price"]; ?></a></td>
 
                       <td style="text-align:center;"><a href="item.php?action=item&Code=<?php echo $item["Code"]; ?>"><?php echo "$ " . number_format($item_Price, 2); ?></a></td>
-                      <td style="text-align:center;"><a href="products.php?action=remove&Code=<?php echo $item["Code"]; ?>" class="btnRemoveAction"><i class="fas fa-times" alt="Remove Item"></i></a></td>
+                      
                     </tr>
 
                   <?php
@@ -224,7 +220,6 @@
                     <td colspan=2 style="text-align:right;"><b><em>Total:&nbsp;&nbsp;&nbsp;</em></b></td>
                     <td style="text-align:center;"><b><?php echo $total_quantity; ?></b></td>
                     <td style="text-align:center;"><strong><?php echo "$ " . number_format($total_Price, 2); ?></strong></td>
-                    <td></td>
                   </tr>
 
                 </table>
@@ -258,8 +253,8 @@
         <div class="delivery-options ml-1 mb-5">
         <h4 class="mb-3">Delivery Option</h4>
           <div class="custom-control custom-radio">
-            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="credit">Deliver to your location</label>
+            <input type="radio" class="custom-control-input">
+            <label class="custom-control-label">Deliver to your location</label>
           </div>
 
           <div class="input-group mb-3">
@@ -269,21 +264,26 @@
             </div>
             <select class="custom-select" id="inputGroupSelect01">
               <option selected>Choose...</option>
-              <option value="1">Deliver to Auckland (+$10)</option>
-              <option value="2">Deliver to Wellington (+$20)</option>
-              <option value="3">Deliver to Christchurch (+$30)</option>
+              <option value="1">+ $10 - Urban 1-10 Products</option>
+              <option value="2">+ $17 - Rural 1-10 Products</option>
+              <option value="3">+ $22 - Outside Auckland 1-10 Products</option>
+              <option value="3">+ $0  - Free shipping 11+ Products</option>
             </select>
           </div>
 
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input">
+            <label class="custom-control-label">Pickup from branch</label>
+          </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupSelect01">Pickup location</label>
+              <label class="input-group-text" for="inputGroupSelect01">Pickup Branch</label>
             </div>
             <select class="custom-select" id="inputGroupSelect01">
               <option selected>Choose...</option>
-              <option value="1">Pickup from branch1</option>
-              <option value="2">Pickup from branch2</option>
-              <option value="3">Pickup from branch3</option>
+              <option value="1">445 Mount Eden Road, Mount Eden, Auckland</option>
+              <option value="2">29 Kerwyn Ave, East Tamaki, Auckland</option>
+              <option value="3">67 Kell Dr, Albany, Auckland</option>
             </select>
           </div>
         </div>
@@ -293,16 +293,6 @@
           <a class="btn btn-lg btn-secondary btn-block ml-1 mr-1" href="cart.php">Cancel Order</a>
         </div>
       </div>
-    </div>
-
-    <div class="container">
-
-    </div>
-    <div class="col-md-8 order-md-1">
-
-
-
-
     </div>
     </form>
   </div>
